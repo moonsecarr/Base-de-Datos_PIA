@@ -384,15 +384,17 @@ body{
 .etiq_estadis{
     color: var(--color-2);
     font-family: var(--font--1);
-    font-weight: 500;
+    font-weight: 400;
     font-size: 20px;
+    padding-top: 5px;
 }
 
 .name_campeon{
     color: var(--color-6);
-    font-family: var(--font--1);
+    font-family: var(--font--2);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
+    padding-top: 0px;
 }
 
 .estadísticas_Mundial{
@@ -400,9 +402,10 @@ body{
 }
 
 .apartado_Esta{
-    border: 5px solid var(--color-3);
+    border: 3px solid var(--color-3);
     border-radius: 15px;
     margin: 5px;
+    flex-direction: column;
 }
 
 /*-------------------------------------Página Crear Nueva Publicación---------------------------*/
