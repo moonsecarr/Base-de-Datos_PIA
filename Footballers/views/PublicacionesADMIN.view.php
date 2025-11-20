@@ -6,7 +6,7 @@
         <title>footballers</title>
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/styles.css" />
+        <link rel="stylesheet" href="/Pantallas_PIA/styles.css" />
     </head>
     <header class="main_header" style="position: static;">
         <div class="row" id="componentes_header">
@@ -72,39 +72,43 @@
                         </div>
                     </div>
 
-                    <div class="col d-flex float-end comentariosPUblic" style="flex-direction: column;">
-                        <div class="comentarios_Public">
-                            <p class="nomUser_comment">sam.palacios09</p>
-                            <p class="contenUser_comment">Toda una leyenda, te amo Pelé!!</p>
+                    <div class="col d-flex float-end comentariosPublicADMIN" style="flex-direction: column;">
+                        
+                        <div class="col d-flex comentarios_Public">
+                            <div class="col flex-grow-1 espacio_comentarioAdmin" >
+                                <p class="nomUser_comment">sam.palacios09</p>
+                                <p class="contenUser_comment">Toda una leyenda, te amo Pelé!!</p>
+                            </div>
+                            <div class="col d-flex justify-content-end align-content-center">
+                                <button class="boton_eliminarPubli" name="boton_eliminarPubli">Eliminar</button>
+                            </div>
+
                         </div>
 
-                        <div class="comentarios_Public">
-                            <p class="nomUser_comment">damiian_carranza16</p>
-                            <p class="contenUser_comment">Sin duda alguna es una leyenda, pero el mejor jugador del mundo es Messi. </p>
+                        <div class=" col d-flex comentarios_Public">
+                            <div class="col flex-grow-1 espacio_comentarioAdmin">
+                                <p class="nomUser_comment">damiian_carranza16</p>
+                                <p class="contenUser_comment">Sin duda alguna es una leyenda, pero el mejor jugador del mundo es Messi. </p>
+                            </div>
+                            <div class="col d-flex justify-content-end ">
+                                <button class="boton_eliminarPubli" name="boton_eliminarPubli">Eliminar</button>
+                            </div>
+                            
                         </div>
                         
-                        <div class="comentarios_Public">
-                            <p class="nomUser_comment">jazmin.ch2003</p>
-                            <p class="contenUser_comment">A próxima Copa do Mundo é do Brasil!!</p>
+                        <div class="col d-flex comentarios_Public">
+                            <div class="col flex-grow-1 espacio_comentarioAdmin">
+                                <p class="nomUser_comment">jazmin.ch2003</p>
+                                <p class="contenUser_comment">A próxima Copa do Mundo é do Brasil!!</p>
+                            </div>
+                            <div class="col d-flex justify-content-end ">
+                                <button class="boton_eliminarPubli" name="boton_eliminarPubli">Eliminar</button>
+                            </div>
+                            
                         </div>
                     </div>
 
-                    <!-- Aplicamos d-flex y alineamos items-center -->
-                    <div class="contenedor_barraComent d-flex align-items-center">
-                        <!-- El input ocupa la mayor parte del espacio -->
-                        <input 
-                            type="text" 
-                            class="input-comentario flex-grow-1" 
-                            id="input_Comentario" 
-                            name="input_Comentario" 
-                            placeholder="Comenta algo..."
-                        >
-                        <!-- Botón de Envío (con el icono) -->
-                        <button class="btn-enviar-coment">
-                            <!-- Icono de Enviar (avión de papel) -->
-                            <img src="assets/iconos/Send.png" alt="Enviar">
-                        </button>
-                    </div>
+                    
                 </div>
 
 

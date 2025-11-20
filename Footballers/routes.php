@@ -65,6 +65,9 @@ $router->add('/crearMundial','controllers/InicioSesion.php');
 //!PUBLICACIONES
 $router->add('/misPublicaciones','controllers/misPublicaciones.php');
 
+//PUBLICACIONES ADMIN
+$router->add('/PublicacionesADMIN','controllers/PublicacionesADMIN.php');
+
 
 //! SOLO SIRVE PARA HACER TEST
 $router->add('/test','controllers/hola.php');
