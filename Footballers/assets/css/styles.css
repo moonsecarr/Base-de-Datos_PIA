@@ -474,14 +474,14 @@ body{
 
 .nomUser_comment{
     color: var(--color-6);
-    font-size: 14px;
+    font-size: 16px;
     font-family: var(--font--1);
     font-weight: 600;
 }
 
 .contenUser_comment{
     color: var(--color-6);
-    font-size: 12px;
+    font-size: 15px;
     font-family: var(--font--2);
 }
 
@@ -489,18 +489,49 @@ body{
     padding: 0;
 }
 
-.nuevo_Coment{
-    background-color: #6100E9; 
-    border: none; 
-    width: 0px;
-    height: 40px; 
-    color: white; 
-    padding: 15px; 
-    font-size: 18px; 
-    margin: 5px; 
-    border-radius: 25px;
-    font-family: var(--font--2);
-    font-size: 14px;
+
+.contenedor_barraComent {
+    /* El contenedor principal debe tener el color de fondo morado y la forma de píldora */
+    background-color: var(--color-4); 
+    border-radius: 25px; 
+    padding: 5px; /* Pequeño padding interno para separar los elementos del borde */
+    width: 80%; /* Asegura que ocupe todo el ancho disponible */
+    margin-top: 15px; /* Espacio superior */
+    margin-bottom: 15px; /* Espacio superior */
+    
+    /* Nota: Hemos eliminado el width: 90%; del HTML original. */
+}
+
+.input-comentario {
+    /* Estilos para el campo de texto interno */
+    background-color: transparent; /* Fondo transparente para que se vea el morado del padre */
+    border: none;
+    outline: none; /* Eliminar el borde de enfoque por defecto */
+    color: var(--color-6); /* Color del texto blanco */
+    padding: 10px;
+    font-size: 1rem;
+    
+    /* El ancho es manejado por flex-grow-1 */
+}
+
+/* Estilo para el placeholder (texto 'Comenta algo...') */
+.input-comentario::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-enviar-coment {
+    /* Estilo del botón de enviar (el icono) */
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px; /* Ajustar padding */
+    flex-shrink: 0; /* Asegura que el botón no se encoja */
+}
+
+.btn-enviar-coment img {
+    height: 24px; /* Ajustar el tamaño del icono */
+    width: 24px;
+    filter: invert(0%) brightness(150%); /* Hace el icono blanco y más brillante */
 }
 
 /*----------------------------REPORTE Y LIKES------------------------------------*/
@@ -613,3 +644,32 @@ body{
 /* Estilos de los otros botones de estado: */
 /* .btn-estado-revision { background-color: orange; } */
 /* .btn-estado-rechazada { background-color: var(--color-5); color: white; } */
+
+#contador_likesPublic{
+    font-family: var(--font--2);
+    color: var(--color-6);
+    font-size: 1rem;
+    margin-right: 25px;
+}
+
+.comentariosPublicADMIN{
+    width: 90%;
+    
+}
+
+.espacio_comentarioAdmin{
+    width: 100%;
+}
+
+.boton_eliminarPubli{
+    background-color: var(--color-5);
+    border-color: var(--color-1);
+    border: 5px;
+    font-family: var(--font--1);
+    color: var(--color-6);
+    font-size: 12px;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 8px;
+    height: fit-content;
+}

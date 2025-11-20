@@ -38,7 +38,7 @@
     <body>
         <div class=".container-fluid body_main">
             <div class="row ">
-                <div class="col-6  align-items-center cont_Public">
+                <div class="col-6  align-content-center cont_Public">
                     <img src="/Pantallas_PIA/assets/pele.jpg" class="img-fluid multiPublic">
                 </div>
 
@@ -62,6 +62,16 @@
                         <p class="etiqPublic">Leyendas</p>
                     </div>
 
+                    <div class="row d-flex justify-content-center align-content-center contenedor_LikesComents" style="margin-bottom: 20px;">
+                        <div class="col d-flex IconoContador">
+                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/like.png">
+                            <p id="contador_likesPublic">26</p>
+
+                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/Message circle.png">
+                            <p id="contador_likesPublic">26</p>
+                        </div>
+                    </div>
+
                     <div class="col d-flex float-end comentariosPUblic" style="flex-direction: column;">
                         <div class="comentarios_Public">
                             <p class="nomUser_comment">sam.palacios09</p>
@@ -79,8 +89,21 @@
                         </div>
                     </div>
 
-                    <div>
-                        <input type="text" class="form-control nuevo_Coment" id="input_Usuario_IS" name="input_Comentario" placeholder="Comenta algo...">
+                    <!-- Aplicamos d-flex y alineamos items-center -->
+                    <div class="contenedor_barraComent d-flex align-items-center">
+                        <!-- El input ocupa la mayor parte del espacio -->
+                        <input 
+                            type="text" 
+                            class="input-comentario flex-grow-1" 
+                            id="input_Comentario" 
+                            name="input_Comentario" 
+                            placeholder="Comenta algo..."
+                        >
+                        <!-- Botón de Envío (con el icono) -->
+                        <button class="btn-enviar-coment">
+                            <!-- Icono de Enviar (avión de papel) -->
+                            <img src="assets/iconos/Send.png" alt="Enviar">
+                        </button>
                     </div>
                 </div>
 

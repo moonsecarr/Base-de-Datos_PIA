@@ -49,6 +49,10 @@ $router->add('/perfilMundial','controllers/perfilMundial.php');
 //*MIS PUBLICACIONES
 $router->add('/misPublicaciones','controllers/misPublicaciones.php');
 
+
+//PUBLICACIONES ADMIN
+$router->add('/PublicacionesADMIN','controllers/PublicacionesADMIN.php');
+
 //*CREAR PUBLICACION
 $router->add('/crearPublicacion','controllers/crearPublicacion.php');
 
@@ -63,6 +67,7 @@ $router->add('/publicacion','controllers/publicacion.php');
 
 //*REPORTES DE LIKES
 $router->add('/reportesLikes','controllers/reportesLikes.php');
+
 
 
 //! SOLO SIRVE PARA HACER TEST
