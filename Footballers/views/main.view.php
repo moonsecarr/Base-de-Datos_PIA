@@ -11,25 +11,25 @@
     <header class="main_header" style="position: static;">
         <div class="row" id="componentes_header">
             <div class="col align-items-center">
-                <a href="/main.html" class="iconos_link me-3" title="Página Principal">
+                <a href="/main" class="iconos_link me-3" title="Página Principal">
                     <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
                 </a>  
             </div>
         
             <div class="col iconos d-flex justify-content-end align-items-center">
-                <a href="/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
+                <a href="/reporteLike" class="iconos_link me-3" title="Reporte de Likes">
                     <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
                 </a>
 
-                <a href="/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
+                <a href="/misPublicaciones" class="iconos_link me-3" title="Mis Publicaciones">
                     <img src="/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
                 </a>
 
-                <a href="/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
+                <a href="/crearPublicacion" class="iconos_link me-3" title="Crear Nuevo Post">
                     <img src="/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
                 </a>
 
-                <a href="/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
+                <a href="/perfilUsuario" class="iconos_link me-3" title="Perfil de Usuario">
                     <img src="/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
                 </a>
             </div>
@@ -47,11 +47,11 @@
                 <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     
                         <div class="img_mundial_card">
-                            <a href="/PerfilMundial.html">
+                            <a href="/perfilMundial">
                                 <img class="img-fluid imagen_mundi" src="/assets/image/uruguay.jpg">
                             </a>
-                            
                         </div>
+
                         <div class="name_mundial_card d-flex justify-content-between align-items-cente">
                             <p name="nombreMundial" class="float-start nombreMundial">URUGUAY</p>
                             <p name="yearMundial" class="nombreMundial">1930</p>
