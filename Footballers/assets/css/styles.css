@@ -506,8 +506,8 @@ body{
 /*----------------------------REPORTE Y LIKES------------------------------------*/
 .contenedorReporte{
     margin: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     
 }
 
@@ -520,7 +520,8 @@ body{
     padding-bottom: 5px;
     font-family: var(--font--2);
     font-size: 18px;
-    margin-bottom: 20px;
+    margin: 20px;
+    width: 100%;
 }
 
 .iconos_reporte{
@@ -532,3 +533,83 @@ body{
     margin-right: 10px;
     font-size: 18px;
 }
+
+/*----------------------------MIS PUBLICACIONES------------------------------------*/
+/* --------------------------------- Styles de Mis Publicaciones -------------------------------- */
+
+/* 1. Contenedor de la cuadrícula (para centrar y espaciar) */
+.contenedorMP {
+    /* El ancho está dado por col-md-4. Usamos un margen inferior responsivo. */
+    padding: 0 10px; /* Padding interno para separación */
+    margin: 20px;
+}
+
+/* 2. La Tarjeta de Publicación (Fondo, Bordes, Sombra) */
+.publicacion-card {
+    background-color: var(--color-4); /* Fondo Morado */
+    border-radius: 20px; /* Bordes redondeados fuertes */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+    overflow: hidden; /* Importante para que los bordes redondeados se vean bien */
+    height: 100%; /* Ocupa la altura completa de la columna */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Título del Usuario */
+.card-header-mp {
+    padding: 10px 15px 5px 15px;
+    font-size: 1.1em;
+    color: var(--color-6); /* Blanco */
+    font-family: var(--font--1);
+}
+
+/* 4. Imagen */
+.card-image-mp {
+    /* La imagen ocupa la mayor parte de la tarjeta */
+    flex-grow: 1; /* Permite que la imagen ocupe el espacio flexible */
+    overflow: hidden;
+}
+
+.multimedia_MP{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el contenedor sin deformarse */
+    border-radius: 0; /* No queremos bordes redondeados en la imagen interna */
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* 5. Descripción */
+.card-description-mp {
+    padding: 15px;
+    color: var(--color-6);
+    font-family: var(--font--2);
+    font-size: 0.85em;
+    text-align: left;
+    flex-shrink: 0; /* No se encoge */
+}
+
+/* 6. Pie de Página y Botón de Estado */
+.card-footer-mp {
+    padding: 15px;
+    padding-top: 5px;
+    text-align: center;
+    flex-shrink: 0;
+    
+}
+
+.estado-publi {
+    font-family: var(--font--2);
+    font-weight: bold;
+    color: var(--color-1); /* Color del texto negro */
+    background-color: var(--color-2); /* Fondo verde (aprobada) */
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    width: 40%;
+     
+}
+
+/* Estilos de los otros botones de estado: */
+/* .btn-estado-revision { background-color: orange; } */
+/* .btn-estado-rechazada { background-color: var(--color-5); color: white; } */
