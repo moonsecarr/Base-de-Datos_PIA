@@ -11,9 +11,11 @@ $router = new Router();
 $router->add('/', 'controllers/login.php');
 
 //! REGISTRO
-$router->add('/register','controllers/register.php');
+$router->add('/registro','controllers/register.php');
 
-//* MANEJA EL REGISTRO
+//*PROCESA EL BACK DEL REGISTRO
+$router->add('/register-process','controllers/register-process.php');
+//*ES UNA PAGINA DE CARGA PARA PERFIL
 $router->add('/register-success','controllers/register-success.php');
 
 //!EDITAR
