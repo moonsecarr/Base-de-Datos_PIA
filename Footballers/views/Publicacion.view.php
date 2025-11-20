@@ -11,26 +11,26 @@
     <header class="main_header" style="position: static;">
         <div class="row" id="componentes_header">
             <div class="col align-items-center">
-                <a href="/Pantallas_PIA/main.html" class="iconos_link me-3" title="Página Principal">
-                    <img src="/Pantallas_PIA/assets/footballers.png" class="float-start imagen_logo" alt="nameapp">
+                <a href="/main.html" class="iconos_link me-3" title="Página Principal">
+                    <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
                 </a>  
             </div>
         
             <div class="col iconos d-flex justify-content-end align-items-center">
-                <a href="/Pantallas_PIA/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
-                    <img src="/Pantallas_PIA/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
+                <a href="/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
+                    <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
                 </a>
 
-                <a href="/Pantallas_PIA/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
-                    <img src="/Pantallas_PIA/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
+                <a href="/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
+                    <img src="/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
                 </a>
 
-                <a href="/Pantallas_PIA/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
-                    <img src="/Pantallas_PIA/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
+                <a href="/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
+                    <img src="/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
                 </a>
 
-                <a href="/Pantallas_PIA/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
-                    <img src="/Pantallas_PIA/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
+                <a href="/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
+                    <img src="/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
                 </a>
             </div>
         </div>
@@ -39,7 +39,7 @@
         <div class=".container-fluid body_main">
             <div class="row ">
                 <div class="col-6  align-items-center cont_Public">
-                    <img src="/Pantallas_PIA/assets/pele.jpg" class="img-fluid multiPublic">
+                    <img src="/assets/image/pele.jpg" class="img-fluid multiPublic">
                 </div>
 
                 <div class="col-6 d-flex info_Public" style="flex-direction: column;">
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="col d-flex align-items-center">
-                        <img class="foto_User_Public" src="/Pantallas_PIA/assets/Kendrick Lamar.jpg">
+                        <img class="foto_User_Public" src="/assets/image/Kendrick Lamar.jpg">
                         <p class="name_User_Public">kendrick.lamar95</p>
                     </div>
 

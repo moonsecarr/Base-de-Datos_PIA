@@ -76,7 +76,7 @@
 
                 <div class="col-6 d-flex justify-content-center align-items-center foto_usuario" style="flex-direction: column;">
                     <div>
-                        <img src="/assets/Kendrick Lamar.jpg" class="fotito_perfil_EP">
+                        <img src="/assets/image/Kendrick Lamar.jpg" class="fotito_perfil_EP">
                     </div>
 
                     <div>
