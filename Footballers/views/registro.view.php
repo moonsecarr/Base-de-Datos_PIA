@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Registro</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+    </head>
+
+    <body>
+        <div class=".container-fluid">
+             <div class="row align-items-center  vh-100" id="componentes_body_index">
+                <div class="col-4 position-relative" id="left-panel">
+                    <div class="half-circle">
+                         <div class="circle-container"></div>
+                        <div class="circle-container2"></div>
+                    </div>
+                    <div class="logo-text text-white">
+                        footballers
+                    </div>
+                </div> 
+
+
+            <div class="col" id="form_IS" style="margin: 60px; margin-top: 0px;">
+                <h1 class="text-center" id="title_page" style="margin-bottom: 10px;">REGISTRO</h1>
+                <div class="mb-1" id="forms"> 
+                    <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Nombre Completo:</label>
+                    <input type="text" class="form-control" id="input_Usuario_IS" name="input_NomCom" placeholder="" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px;">
+                </div>
+
+                <div class="mb-1" id="forms">
+                    <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Nombre del Usuario:</label>
+                    <input type="text" class="form-control" id="input_Usuario_IS" name="input_NomUsu" placeholder="" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px;">
+                </div>
+
+                <div class="mb-1" id="forms" style="display: flex; margin-right: 5px;">
+                    <div class="col-5">
+                        <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="input_Usuario_IS" name="input_NomUsu" placeholder="" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px; width: 300px;">
+                    </div>
+
+                    <div class="col-5">
+                        <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Nacionalidad:</label>
+
+                        <select class="form-select" aria-label="Default select example" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 300px; ">
+                            <option selected>Abrir el menú</option>
+                            <option value="1">México</option>
+                            <option value="2">Estados Unidos</option>
+                            <option value="3">Cánada</option>
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <div class="mb-1" id="forms">
+                    <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Correo:</label>
+                    <input type="email" class="form-control" id="input_Usuario_IS" name="input_NomUsu" placeholder="" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px;">
+                </div>
+
+                <div id="forms" class="mb-1" style="width: 700px;" >
+                    <label for="input_Contra" class="form-label" id="label_text" style="font-size: larger;">Contraseña</label>
+                    <input type="password" id="input_Contra" class="form-control" aria-describedby="passwordHelpBlock" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 10px; border-radius: 25px;">
+                    <div id="passwordHelpBlock" class="form-text" style="color: rgb(67, 67, 67); margin-top: 15px; margin-bottom: 15px;">
+                        Tú contraseña debe contener mínimo 8 caracteres, sin carácteres
+                        especiales ni emojis. 
+                    </div>
+                    
+                    <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Foto de perfil:</label>
+                    <input type="file" class="form-control" id="input_Usuario_IS" name="input_NomUsu" placeholder="" style="background-color: #6100E9; border: none; height: 60px; color: white; padding: 20px; padding-left: 30px; font-size: 15px; margin: 10px; border-radius: 25px; width: 530px;">
+                    
+                    <input class="btn btn-primary" type="submit" value="Registrarse" id="btn_IS" style="background-color: #D60004; margin: 25px; margin-left: 280px;">
+
+                    <br>
+                    <a href="/Pantallas_PIA/index.html" style="margin-top: 15px;">
+                        Ya tengo cuenta
+                    </a>
+                </div> 
+
+                
+
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

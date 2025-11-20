@@ -23,6 +23,46 @@ $router->add('/edit','controllers/edit.php');
 
 $router->add('/crearMundial','controllers/crearMundial.php');
 
+//*PERFIL MUNDIAL
+
+$router->add('/crearMundial','controllers/PerfilMundial.php');
+
+//*MAIN
+
+$router->add('/crearMundial','controllers/main.php');
+
+//*CREAR PUBLICACION
+
+$router->add('/crearMundial','controllers/CrearPublicacion.php');
+
+//*MIS PUBLICACIONES
+
+$router->add('/crearMundial','controllers/MisPublicaciones.php');
+
+//EDITAR PERFIL
+
+$router->add('/crearMundial','controllers/EditarPerfil.php');
+
+//PERFIL USUARIO
+
+$router->add('/crearMundial','controllers/PerfilUsuario.php');
+
+//PUBLICACION
+
+$router->add('/crearMundial','controllers/Publicacion.php');
+
+//REPORTE LIKES
+
+$router->add('/crearMundial','controllers/ReporteLikes.php');
+
+//REGISTRO - MONSE
+
+$router->add('/crearMundial','controllers/registro.php');
+
+//INICIO SESION - MONSE
+
+$router->add('/crearMundial','controllers/InicioSesion.php');
+
 
 //! SOLO SIRVE PARA HACER TEST
 $router->add('/test','controllers/hola.php');
