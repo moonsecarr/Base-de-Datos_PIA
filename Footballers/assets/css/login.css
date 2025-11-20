@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "KronaOne-Regular";
+    src: url(/assets/fonts/KronaOne-Regular.ttf)format("truetype")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(/assets/fonts/Montserrat-Regular.ttf)format("truetype")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #000000ff;
+      
+    overflow-y: hidden;
+    overflow-x: hidden;
+   
+}
+
+
+.loginContainer {
+   
+  
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: .5rem;
+}
+
+#Titulo {
+    font-family: KronaOne-Regular;
+    font-weight: 50;
+    font-size: 30px;
+    color: #B1E804ff;
+    margin-left: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.lbLogin {
+
+    font-family: KronaOne-Regular;
+    font-size: 20px;
+    color: rgb(251, 254, 240);
+}
+
+.ipLogin {
+
+    background-color: #6100E9ff;
+    font-family: Montserrat-Regular;
+    font-size: 20px;
+    color: rgb(251, 254, 240);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+
+.btnLogin {
+    background-color: #D60004ff;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: rgb(251, 254, 240);
+    border: none;
+    padding: 0.4rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    width: 40%;
+    align-items: center;
+}

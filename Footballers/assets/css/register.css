@@ -1,0 +1,209 @@
+
+@font-face {
+    font-family: "KronaOne-Regular";
+    src: url(/assets/fonts/KronaOne-Regular.ttf)format("truetype")
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(/assets/fonts/Montserrat-Regular.ttf)format("truetype")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000ff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.registerContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-left: -500px;
+}
+
+.formRegister {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    margin: .5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#rTitulo {
+    font-family: KronaOne-Regular;
+    font-weight: 50;
+    font-size: 30px;
+    color: #B1E804ff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lbReg {
+    font-family: KronaOne-Regular;
+    font-size: 15px;
+    color: rgb(251, 254, 240);
+    margin-bottom: 0.3rem;
+}
+
+.ipReg {
+    background-color: #6100E9ff;
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: rgb(251, 254, 240);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.btnRegister {
+    background-color: #D60004ff;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: rgb(251, 254, 240);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 40%;
+    align-self: center;
+}
+
+.registerContainer p {
+    font-family: Montserrat-Regular;
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.registerContainer a {
+    color: #B1E804ff;
+    text-decoration: none;
+}
+
+.registerContainer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos personalizados para el input de archivo */
+.file-input-group {
+    grid-column: span 1;
+}
+
+.custom-file-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-file-label {
+    background-color: #6100E9ff;
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: rgb(251, 254, 240);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.custom-file-label:hover {
+    background-color: #4a00b5;
+}
+
+.file-icon {
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+.file-text {
+    font-family: Montserrat-Regular;
+}
+
+.file-name {
+    font-family: Montserrat-Regular;
+    font-size: 14px;
+    color: rgb(251, 254, 240);
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+/* Para pantallas más pequeñas, cambiamos a 2 columnas */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .formRegister {
+        max-width: 600px;
+    }
+}
+
+/* Para pantallas muy pequeñas, cambiamos a 1 columna */
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .formRegister {
+        max-width: 400px;
+    }
+    
+    .file-input-group {
+        grid-column: span 1;
+    }
+}
+
+
+.swal2-title.mi-titulo {
+   
+  font-family: KronaOne-Regular;
+  font-size: 20px;
+  font-weight: bold;
+  color: #B1E804ff;
+  
+}
+
+.swal2-confirm.mi-boton {
+  background-color: #6100E9ff;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+}
