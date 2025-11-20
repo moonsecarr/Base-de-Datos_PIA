@@ -20,7 +20,7 @@
             <div class="col iconos d-flex justify-content-end align-items-center">
                 
 
-                <a href="/Pantallas_PIA/MisPublicaciones.html" class="iconos_link me-3" title="Notificaciones">
+                <a href="/misPublicaciones" class="iconos_link me-3" title="Notificaciones">
                     <img src="/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
                 </a>
 

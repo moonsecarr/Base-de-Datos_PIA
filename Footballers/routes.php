@@ -23,6 +23,7 @@ $router->add('/edit','controllers/edit.php');
 
 $router->add('/crearMundial','controllers/crearMundial.php');
 
+
 //*PERFIL MUNDIAL
 
 $router->add('/crearMundial','controllers/PerfilMundial.php');
@@ -35,9 +36,6 @@ $router->add('/crearMundial','controllers/main.php');
 
 $router->add('/crearMundial','controllers/CrearPublicacion.php');
 
-//*MIS PUBLICACIONES
-
-$router->add('/crearMundial','controllers/MisPublicaciones.php');
 
 //EDITAR PERFIL
 
@@ -62,6 +60,10 @@ $router->add('/crearMundial','controllers/registro.php');
 //INICIO SESION - MONSE
 
 $router->add('/crearMundial','controllers/InicioSesion.php');
+
+
+//!PUBLICACIONES
+$router->add('/misPublicaciones','controllers/misPublicaciones.php');
 
 
 //! SOLO SIRVE PARA HACER TEST
