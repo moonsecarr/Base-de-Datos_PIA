@@ -14,8 +14,9 @@ $router->add('/register','controllers/register.php');
 //* MANEJA EL REGISTRO
 $router->add('/register-success','controllers/register-success.php');
 
-//* EDITAR USUARIO
-$router->add('/edit','controllers/edit.php');
+
+//* EDITAR PERFIL
+$router->add('/editarPerfil','controllers/editarPerfil.php');
 
 //! MUNDIALES
 
@@ -24,46 +25,17 @@ $router->add('/edit','controllers/edit.php');
 $router->add('/crearMundial','controllers/crearMundial.php');
 
 
-//*PERFIL MUNDIAL
-
-$router->add('/crearMundial','controllers/PerfilMundial.php');
-
-//*MAIN
-
-$router->add('/crearMundial','controllers/main.php');
-
-//*CREAR PUBLICACION
-
-$router->add('/crearMundial','controllers/CrearPublicacion.php');
 
 
-//EDITAR PERFIL
-
-$router->add('/crearMundial','controllers/EditarPerfil.php');
-
-//PERFIL USUARIO
-
-$router->add('/crearMundial','controllers/PerfilUsuario.php');
-
-//PUBLICACION
-
-$router->add('/crearMundial','controllers/Publicacion.php');
-
-//REPORTE LIKES
-
-$router->add('/crearMundial','controllers/ReporteLikes.php');
-
-//REGISTRO - MONSE
-
-$router->add('/crearMundial','controllers/registro.php');
-
-//INICIO SESION - MONSE
-
-$router->add('/crearMundial','controllers/InicioSesion.php');
 
 
 //!PUBLICACIONES
+
+//*MIS PUBLICACIONES
 $router->add('/misPublicaciones','controllers/misPublicaciones.php');
+
+//*CREAR PUBLICACION
+$router->add('/crearPublicacion','controllers/crearPublicacion.php');
 
 
 //! SOLO SIRVE PARA HACER TEST
