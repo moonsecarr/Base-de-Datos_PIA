@@ -11,26 +11,26 @@
     <header class="main_header" style="position: static;">
         <div class="row" id="componentes_header">
             <div class="col align-items-center">
-                <a href="/Pantallas_PIA/main.html" class="iconos_link me-3" title="Página Principal">
-                    <img src="/Pantallas_PIA/assets/footballers.png" class="float-start imagen_logo" alt="nameapp">
+                <a href="/main.html" class="iconos_link me-3" title="Página Principal">
+                    <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
                 </a>  
             </div>
         
             <div class="col iconos d-flex justify-content-end align-items-center">
-                <a href="/Pantallas_PIA/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
-                    <img src="/Pantallas_PIA/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
+                <a href="/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
+                    <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
                 </a>
 
-                <a href="/Pantallas_PIA/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
-                    <img src="/Pantallas_PIA/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
+                <a href="/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
+                    <img src="/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
                 </a>
 
-                <a href="/Pantallas_PIA/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
-                    <img src="/Pantallas_PIA/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
+                <a href="/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
+                    <img src="/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
                 </a>
 
-                <a href="/Pantallas_PIA/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
-                    <img src="/Pantallas_PIA/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
+                <a href="/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
+                    <img src="/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
                 </a>
             </div>
         </div>
@@ -47,8 +47,8 @@
                 <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     
                         <div class="img_mundial_card">
-                            <a href="/Pantallas_PIA/PerfilMundial.html">
-                                <img class="img-fluid imagen_mundi" src="/Pantallas_PIA/assets/uruguay.jpg">
+                            <a href="/PerfilMundial.html">
+                                <img class="img-fluid imagen_mundi" src="/assets/image/uruguay.jpg">
                             </a>
                             
                         </div>
@@ -62,7 +62,7 @@
 
                 <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center" >
                     <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi" src="/Pantallas_PIA/assets/italia 1934.jpg">
+                        <img class="img-fluid imagen_mundi" src="/assets/image/italia 1934.jpg">
                     </div>
                     <div class="name_mundial_card d-flex justify-content-between align-items-cente">
                         <p name="nombreMundial" class="float-start nombreMundial">ITALIA</p>
@@ -73,7 +73,7 @@
 
                 <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi"  src="/Pantallas_PIA/assets/inglaterra 1966.jpeg">
+                        <img class="img-fluid imagen_mundi"  src="/assets/image/inglaterra 1966.jpeg">
                     </div>
                     <div class="name_mundial_card d-flex justify-content-between align-items-cente">
                         <p name="nombreMundial" class="float-start nombreMundial">FRANCIA</p>
@@ -84,7 +84,7 @@
 
                 <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi"  src="/Pantallas_PIA/assets/brasil 1950.webp">
+                        <img class="img-fluid imagen_mundi"  src="/assets/image/brasil 1950.webp">
                     </div>
                     <div class="name_mundial_card d-flex justify-content-between align-items-center">
                         <p name="nombreMundial" class="nombreMundial">BRASIL</p>
@@ -94,7 +94,7 @@
 
                 <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi"  src="/Pantallas_PIA/assets/suiza 1954.jpg">
+                        <img class="img-fluid imagen_mundi"  src="/assets/image/suiza 1954.jpg">
                     </div>
                     <div class="name_mundial_card d-flex justify-content-between align-items-center">
                         <p name="nombreMundial" class="nombreMundial">SUIZA</p>

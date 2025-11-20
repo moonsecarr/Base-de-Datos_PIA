@@ -11,26 +11,26 @@
     <header class="main_header" style="position: static;">
         <div class="row" id="componentes_header">
             <div class="col align-items-center">
-                <a href="/Pantallas_PIA/main.html" class="iconos_link me-3" title="Página Principal">
-                    <img src="/Pantallas_PIA/assets/footballers.png" class="float-start imagen_logo" alt="nameapp">
+                <a href="/main.html" class="iconos_link me-3" title="Página Principal">
+                    <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
                 </a>  
             </div>
         
             <div class="col iconos d-flex justify-content-end align-items-center">
-                <a href="/Pantallas_PIA/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
-                    <img src="/Pantallas_PIA/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
+                <a href="/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
+                    <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
                 </a>
 
-                <a href="/Pantallas_PIA/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
-                    <img src="/Pantallas_PIA/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
+                <a href="/MisPublicaciones.html" class="iconos_link me-3" title="Mis Publicaciones">
+                    <img src="/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
                 </a>
 
-                <a href="/Pantallas_PIA/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
-                    <img src="/Pantallas_PIA/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
+                <a href="/CrearPublicacion.html" class="iconos_link me-3" title="Crear Nuevo Post">
+                    <img src="/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
                 </a>
 
-                <a href="/Pantallas_PIA/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
-                    <img src="/Pantallas_PIA/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
+                <a href="/PerfilUsuario.html" class="iconos_link me-3" title="Perfil de Usuario">
+                    <img src="/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
                 </a>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class=".container-fluid body_main">
             <div class="row  d-flex align-items-center apartado_Usuario">
                 <div class="col-5 d-flex justify-content-end foto_usuario">
-                    <img src="/Pantallas_PIA/assets/Kendrick Lamar.jpg" class="fotito_perfil"
+                    <img src="/assets/image/Kendrick Lamar.jpg" class="fotito_perfil"
                     style="
                     height: 200px;
                     width: 200px;">
@@ -58,26 +58,12 @@
                         <p style="width: 80%;">Pelé:La Leyenda</p>
 
                         <div class="col d-flex justify-content-end IconoContador">
-                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/like.png">
+                            <img class="iconos_reporte" src="/assets/iconos/like.png">
                             <p>26</p>
                         </div>
 
                         <div class="col d-flex justify-content-end IconoContador">
-                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/Message circle.png">
-                            <p>26</p>
-                        </div>
-                        
-                    </div>
-                    <div class="col d-flex containerREP" style="color:aliceblue">
-                        <p style="width: 80%;">Pelé:La Leyenda</p>
-
-                        <div class="col d-flex justify-content-end IconoContador">
-                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/like.png">
-                            <p>26</p>
-                        </div>
-
-                        <div class="col d-flex justify-content-end IconoContador">
-                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/Message circle.png">
+                            <img class="iconos_reporte" src="/assets/iconos/Message circle.png">
                             <p>26</p>
                         </div>
                         
@@ -86,12 +72,26 @@
                         <p style="width: 80%;">Pelé:La Leyenda</p>
 
                         <div class="col d-flex justify-content-end IconoContador">
-                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/like.png">
+                            <img class="iconos_reporte" src="/assets/iconos/like.png">
                             <p>26</p>
                         </div>
 
                         <div class="col d-flex justify-content-end IconoContador">
-                            <img class="iconos_reporte" src="/Pantallas_PIA/assets/iconos/Message circle.png">
+                            <img class="iconos_reporte" src="/assets/iconos/Message circle.png">
+                            <p>26</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col d-flex containerREP" style="color:aliceblue">
+                        <p style="width: 80%;">Pelé:La Leyenda</p>
+
+                        <div class="col d-flex justify-content-end IconoContador">
+                            <img class="iconos_reporte" src="/assets/iconos/like.png">
+                            <p>26</p>
+                        </div>
+
+                        <div class="col d-flex justify-content-end IconoContador">
+                            <img class="iconos_reporte" src="/assets/iconos/Message circle.png">
                             <p>26</p>
                         </div>
                         

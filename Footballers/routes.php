@@ -5,6 +5,8 @@ $router = new Router();
 
 //TODO: AQUI VAN LAS RUTAS DE LAS PAGINAS 
 
+
+
 //! INICIO DE SESION
 $router->add('/', 'controllers/login.php');
 
@@ -14,8 +16,14 @@ $router->add('/register','controllers/register.php');
 //* MANEJA EL REGISTRO
 $router->add('/register-success','controllers/register-success.php');
 
-//* EDITAR USUARIO
-$router->add('/edit','controllers/edit.php');
+//!EDITAR
+//* EDITAR PERFIL
+$router->add('/editarPerfil','controllers/editarPerfil.php');
+
+//!VER USUARIOS
+//* PERFIL USUARIO
+$router->add('/perfilUsuario','controllers/perfilUsuario.php');
+
 
 //! MUNDIALES
 
@@ -23,50 +31,41 @@ $router->add('/edit','controllers/edit.php');
 
 $router->add('/crearMundial','controllers/crearMundial.php');
 
+//*MAIN 
+//?Esta es la pagina de los mundiales
+
+$router->add('/main','controllers/main.php');
 
 //*PERFIL MUNDIAL
 
-$router->add('/crearMundial','controllers/PerfilMundial.php');
+$router->add('/perfilMundial','controllers/perfilMundial.php');
 
-//*MAIN
-
-$router->add('/crearMundial','controllers/main.php');
-
-//*CREAR PUBLICACION
-
-$router->add('/crearMundial','controllers/CrearPublicacion.php');
-
-
-//EDITAR PERFIL
-
-$router->add('/crearMundial','controllers/EditarPerfil.php');
-
-//PERFIL USUARIO
-
-$router->add('/crearMundial','controllers/PerfilUsuario.php');
-
-//PUBLICACION
-
-$router->add('/crearMundial','controllers/Publicacion.php');
-
-//REPORTE LIKES
-
-$router->add('/crearMundial','controllers/ReporteLikes.php');
-
-//REGISTRO - MONSE
-
-$router->add('/crearMundial','controllers/registro.php');
-
-//INICIO SESION - MONSE
-
-$router->add('/crearMundial','controllers/InicioSesion.php');
 
 
 //!PUBLICACIONES
+
+//*MIS PUBLICACIONES
 $router->add('/misPublicaciones','controllers/misPublicaciones.php');
+
 
 //PUBLICACIONES ADMIN
 $router->add('/PublicacionesADMIN','controllers/PublicacionesADMIN.php');
+
+//*CREAR PUBLICACION
+$router->add('/crearPublicacion','controllers/crearPublicacion.php');
+
+//*VER PUBLICACION
+$router->add('/verPublicacion','controllers/verPublicacion.php');
+
+//*REPORTES DE LIKES
+$router->add('/reporteLike','controllers/reporteLike.php');
+
+//*PUBLICACION
+$router->add('/publicacion','controllers/publicacion.php');
+
+//*REPORTES DE LIKES
+$router->add('/reportesLikes','controllers/reportesLikes.php');
+
 
 
 //! SOLO SIRVE PARA HACER TEST
