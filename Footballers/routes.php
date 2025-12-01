@@ -8,13 +8,17 @@ $router = new Router();
 
 
 //! INICIO DE SESION
-$router->add('/', 'controllers/login.php');
-
+/* $router->add('/', 'controllers/login.php');*/
+ $router->add('/', 'controllers/inicioSesion.php');
 //! REGISTRO
-$router->add('/registro','controllers/register.php');
+/* $router->add('/register','controllers/register.php');
+ */
+//*Pantalla que se va a usar
+$router->add('/registro','controllers/registro.php'); 
 
 //*PROCESA EL BACK DEL REGISTRO
-$router->add('/register-process','controllers/register-process.php');
+/* $router->add('/register-process','controllers/register-process.php'); */
+$router->add('/registro-process','controllers/registro-process.php'); 
 //*ES UNA PAGINA DE CARGA PARA PERFIL
 $router->add('/register-success','controllers/register-success.php');
 
@@ -26,6 +30,8 @@ $router->add('/editarPerfil','controllers/editarPerfil.php');
 //* PERFIL USUARIO
 $router->add('/perfilUsuario','controllers/perfilUsuario.php');
 
+//!CERRAR SESION
+$router->add('/logout','middlewares/logout.php');
 
 //! MUNDIALES
 

@@ -8,6 +8,8 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/alerts.css" />
+
 </head>
 
 <body>
@@ -32,7 +34,7 @@
                 <div class="success"><?php echo htmlspecialchars($_GET['success']); ?></div>
             <?php endif; ?>
 
-            <form class="col" id="form_IS" action="/register-process" method="POST" enctype="multipart/form-data" style="margin: 60px; margin-top: 0px;">
+            <form class="col" id="form_IS" action="\registro-process" method="POST" enctype="multipart/form-data" style="margin: 60px; margin-top: 0px;">
                 <h1 class="text-center" id="title_page" style="margin-bottom: 10px;">REGISTRO</h1>
 
                 <!-- Nombre Completo -->
@@ -47,22 +49,29 @@
                     <input type="text" class="form-control" id="input_NomUsu" name="input_NomUsu" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px;">
                 </div>
 
-                <!-- País -->
-                <div class="mb-1" id="forms">
-                    <label for="pais" class="form-label" id="label_text" style="font-size: larger;">País:</label>
-                    <input type="text" class="form-control" id="pais" name="pais" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px;">
-                </div>
 
-                <!-- Género -->
-                <div class="mb-1" id="forms">
-                    <label for="genero" class="form-label" id="label_text" style="font-size: larger;">Género:</label>
-                    <select name="genero" id="genero" class="form-select" aria-label="Default select example" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 300px;">
-                        <option value="Sin seleccionar">Selecciona un género</option>
-                        <option value="Mujer">Mujer</option>
-                        <option value="Hombre">Hombre</option>
-                        <option value="Otros">Otros</option>
-                        <option value="Prefiero no decir">Prefiero no decir</option>
-                    </select>
+                <!-- Género y rol -->
+                <div class="mb-1" id="forms" style="display: flex; margin-right: 5px;">
+
+                    <div class="col-5">
+                        <label for="genero" class="form-label" id="label_text" style="font-size: larger;">Género:</label>
+                        <select name="genero" id="input_Genero" class="form-select" aria-label="Default select example" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 300px;">
+                            <option value="Sin seleccionar">Selecciona un género</option>
+                            <option value="Mujer">Mujer</option>
+                            <option value="Hombre">Hombre</option>
+                            <option value="Otros">Otros</option>
+                            <option value="Prefiero no decir">Prefiero no decir</option>
+                        </select>
+                    </div>
+                    <div class="col-5">
+                        <label for="rol" class="form-label" id="label_text" style="font-size: larger;">Rol:</label>
+                        <select name="input_Rol" id="input_Rol" class="form-select" aria-label="Default select example" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 300px;">
+                            <option value="Ninguno">Ninguno</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Operador">Operador</option>
+
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Fecha de Nacimiento y Nacionalidad -->
@@ -94,9 +103,12 @@
                 <div class="mb-1" id="forms">
                     <label for="correo" class="form-label" id="label_text" style="font-size: larger;">Correo Electrónico:</label>
                     <input type="email" class="form-control" id="correo" name="input_Correo" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 5px; border-radius: 25px;">
+
+
                 </div>
 
-                <!-- Contraseña -->
+            
+                <!-- Contraseña  y Foto-->
                 <div id="forms" class="mb-1" style="width: 700px;">
                     <label for="contraReg" class="form-label" id="label_text" style="font-size: larger;">Contraseña:</label>
                     <input type="password" name="input_Contra" id="contraReg" class="form-control" aria-describedby="passwordHelpBlock" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 15px; font-size: 18px; margin: 10px; border-radius: 25px;">
@@ -124,7 +136,7 @@
         </div>
     </div>
 
-    <script src="/assets/js/register.js"></script>
+    <script src="/assets/js/registro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

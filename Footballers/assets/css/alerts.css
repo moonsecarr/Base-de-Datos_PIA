@@ -1,3 +1,38 @@
-.swal2-container {
-  z-index: 99999 !important;
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-1:black;
+    --color-2:#B1E804;
+    --color-3:#01C755;
+    --color-4:#6100E9;
+    --color-5:#D60004;
+    --color-6:#ffffff;
+    --color-7:#390001;
+    --font--1: "Krona One";
+    --font--2: "Montserrat", sans-serif;
+}
+
+.mi-titulo {
+    font-family: var(--font--1);   
+    text-transform: uppercase;    
+    letter-spacing: 2px;           
+}
+
+
+.mi-boton {
+    font-family: var(--font--2);   
+    font-weight: 600;              
+    background-color: var(--color-2); 
+    color: var(--color-1);         
+    border: none;                  
+    border-radius: 8px;          
+    padding: 10px 20px;            
+    cursor: pointer;               
+    transition: all 0.3s ease;   
+}
+.mi-boton:hover {
+    background-color: var(--color-3); 
+    color: var(--color-6);            
+    transform: scale(1.05);           
 }

@@ -32,7 +32,7 @@
                 <span class="letter">S</span>
             </div>
             <!-- Nuevo enlace de registro -->
-            <a href="/register" class="register-link"> REGISTRO </a>
+            <a href="/registro" class="register-link"> REGISTRO </a>
         </div>
 
         <form class="formLogin" action="/" method="POST">
