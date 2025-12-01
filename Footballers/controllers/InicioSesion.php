@@ -29,8 +29,10 @@ if ($requestMethod === 'POST') {
     if (empty($nickname) || empty($contraseña)) {
         $errors[] = "Por favor, complete todos los campos.";
     }
-    if (strlen($contraseña) <  8) {
+    if (strlen($contraseña) <  8 ) {
         $errors[] = "La contraseña no puede tener menos de 8 caracteres.";
+    }else if(strlen($contraseña)  > 10){
+        $errors[] = "La contraseña no puede tener mas de 10 caracteres.";
     }
 
     if (!empty($errors)) {

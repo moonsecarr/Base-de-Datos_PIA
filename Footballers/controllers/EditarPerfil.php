@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nacionalidad = trim($_POST['input_Nacionalidad']);
     $correo = trim($_POST['input_Correo']);
     $contraseña = $_POST['input_Contra'];
-
+    
 
     // Validaciones básicas
     if (
@@ -90,34 +90,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    //Genero
-    if ($genero === 'Sin seleccionar' || empty($genero)) {
+
+     //Gentilicios
+    $gentilicios = [
+        'México' => ['Hombre' => 'Mexicano', 'Mujer' => 'Mexicana'],
+        'Estados Unidos' => ['Hombre' => 'Estadounidense', 'Mujer' => 'Estadounidense'],
+        'Canadá' => ['Hombre' => 'Canadiense', 'Mujer' => 'Canadiense'],
+        'Argentina' => ['Hombre' => 'Argentino', 'Mujer' => 'Argentina'],
+        'Colombia' => ['Hombre' => 'Colombiano', 'Mujer' => 'Colombiana'],
+        'España' => ['Hombre' => 'Español', 'Mujer' => 'Española'],
+        'Brasil' => ['Hombre' => 'Brasileño', 'Mujer' => 'Brasileña'],
+        'Chile' => ['Hombre' => 'Chileno', 'Mujer' => 'Chilena'],
+        'Perú' => ['Hombre' => 'Peruano', 'Mujer' => 'Peruana'],
+        'Otro' => ['Hombre' => 'Otro', 'Mujer' => 'Otra']
+    ];
+    //Pais
+    $pais = '';
+
+     //Nacionalidad
+     if ($nacionalidad === '' || empty($nacionalidad)) {
         echo json_encode([
             "status" => "error",
-            "message" => "Por favor selecciona un género."
+            "message" => "Por favor selecciona un pais."
+        ]);
+        exit;
+    }else{
+
+        //*Pasamos el nombre del pais a la variable $pais
+        $paisSeleccionado = $nacionalidad; 
+        
+        $pais = $paisSeleccionado;
+
+        // Nacionalidad = gentilicio adaptado
+        if (isset($gentilicios[$paisSeleccionado])) {
+            $nacionalidad = $gentilicios[$paisSeleccionado][$genero]
+                ?? ($gentilicios[$paisSeleccionado]['Hombre'] ?? $paisSeleccionado);
+        } else {
+            $nacionalidad = $paisSeleccionado;
+        }
+    }
+
+   //Foto
+    if (isset($_FILES['input_Foto']) && $_FILES['input_Foto']['error'] === UPLOAD_ERR_OK) {
+        $foto_blob = file_get_contents($_FILES['input_Foto']['tmp_name']);
+    } elseif (!empty($_SESSION['session_foto'])) {
+        $foto_blob = $_SESSION['session_foto']; // conservar la existente
+    } else {
+        echo json_encode([
+            "status" => "error",
+            "message" => "Debes tener al menos una foto de perfil."
         ]);
         exit;
     }
 
-    
-    //Pais
-    $pais = '';
-
-    // Validar y asignar
-    if ($nacionalidad === 'México') {
-        $pais = 'México';
-    } elseif ($nacionalidad === 'Estados Unidos') {
-        $pais = 'Estados Unidos';
-    } elseif ($nacionalidad === 'Cánada') {
-        $pais = 'Cánada';
-    }
-
-
-    // Procesar foto (opcional)
-    $foto_blob = null;
-    if (isset($_FILES['input_Foto']) && $_FILES['input_Foto']['error'] === UPLOAD_ERR_OK) {
-        $foto_blob = file_get_contents($_FILES['input_Foto']['tmp_name']);
-    }
 
     try {
         $sql = "CALL sp_usuarios(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

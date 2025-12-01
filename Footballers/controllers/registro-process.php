@@ -165,10 +165,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    //Contraseña
     $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/";
 
-    if (!preg_match($passwordRegex, $contraseña)) {
+    if (!preg_match($passwordRegex, $contraseña) || strlen( $contraseña) < 8 ) {
         echo json_encode([
             "status" => "error",
             "message" => "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número."
+        ]);
+        exit;
+    }else if (!preg_match($passwordRegex, $contraseña) || strlen( $contraseña) > 10 ) {
+        echo json_encode([
+            "status" => "error",
+            "message" => "La contraseña no debe tener mas de 10 caracteres, debe de tener una mayúscula, una minúscula y un número."
         ]);
         exit;
     }

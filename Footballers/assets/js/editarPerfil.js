@@ -99,7 +99,7 @@ form.addEventListener("submit", function(e) {
 
     });
 });
- 
+
  
 
 //!Es para ver que llega de json
