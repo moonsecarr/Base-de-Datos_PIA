@@ -1,4 +1,6 @@
 <?php
+
+
 //TODO: Ok monse aqui literal solo copias y pegas esto y cambias nombres de variables
 $page = 'crearPublicacion';   //! Cambias el nombre de la page en este caso crearMundiales
 

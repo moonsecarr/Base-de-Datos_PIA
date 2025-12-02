@@ -61,6 +61,7 @@ $router->add('/PublicacionesADMIN','controllers/PublicacionesADMIN.php');
 
 //*CREAR PUBLICACION
 $router->add('/crearPublicacion','controllers/crearPublicacion.php');
+$router->add('/crearPublicacion-process','controllers/crearPublicacion-process.php');
 
 //*VER PUBLICACION
 $router->add('/verPublicacion','controllers/verPublicacion.php');
