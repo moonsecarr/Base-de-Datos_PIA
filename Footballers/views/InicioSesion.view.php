@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <form class="col" id="form_IS" action="/" method="POST">
+            <form class="col" id="form_IS" action="/inicioSesion-process" method="POST">
                 <h1 class="text-center" id="title_page">INICIO DE SESIÓN</h1>
 
 

@@ -4,4 +4,4 @@ $page = 'PublicacionesADMIN';   //! Cambias el nombre de la page en este caso cr
 
 $currentPage = $_SERVER['REQUEST_URI'];
 
-require 'views/PublicacionesADMIN.view.php';  //! Aqui haces referencia a la vista de crearMundiales.view.php
+require 'views/administrador/PublicacionesADMIN.view.php';  //! Aqui haces referencia a la vista de crearMundiales.view.php

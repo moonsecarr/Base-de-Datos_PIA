@@ -4,4 +4,4 @@ $page = 'crearMundiales';   //! Cambias el nombre de la page en este caso crearM
 
 $currentPage = $_SERVER['REQUEST_URI'];
 
-require 'views/crearMundial.view.php';  //! Aqui haces referencia a la vista de crearMundiales.view.php
+require 'views/administrador/crearMundial.view.php';  //! Aqui haces referencia a la vista de crearMundiales.view.php

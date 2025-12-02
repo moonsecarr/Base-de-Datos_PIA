@@ -10,6 +10,8 @@ $router = new Router();
 //! INICIO DE SESION
 /* $router->add('/', 'controllers/login.php');*/
  $router->add('/', 'controllers/inicioSesion.php');
+ $router->add('/inicioSesion-process', 'controllers/inicioSesion-process.php');
+
 //! REGISTRO
 /* $router->add('/register','controllers/register.php');
  */
@@ -42,7 +44,8 @@ $router->add('/crearMundial','controllers/crearMundial.php');
 //*MAIN 
 //?Esta es la pagina de los mundiales
 
-$router->add('/main','controllers/main.php');
+$router->add('/operador/main','controllers/main.php');
+$router->add('/administrador/main','controllers/mainAdmin.php');
 
 //*PERFIL MUNDIAL
 
@@ -56,8 +59,9 @@ $router->add('/perfilMundial','controllers/perfilMundial.php');
 $router->add('/misPublicaciones','controllers/misPublicaciones.php');
 
 
-//PUBLICACIONES ADMIN
+//!PUBLICACIONES ADMIN
 $router->add('/PublicacionesADMIN','controllers/PublicacionesADMIN.php');
+$router->add('/solicitudesPublicacion','controllers/solicitudPublicacion.php');
 
 //*CREAR PUBLICACION
 $router->add('/crearPublicacion','controllers/crearPublicacion.php');
@@ -76,6 +80,8 @@ $router->add('/publicacion','controllers/publicacion.php');
 $router->add('/reportesLikes','controllers/reportesLikes.php');
 
 
+//!CATEGORIAS
+$router->add('/reportesLikes','controllers/reportesLikes.php');
 
 //! SOLO SIRVE PARA HACER TEST
 $router->add('/test','controllers/hola.php');
