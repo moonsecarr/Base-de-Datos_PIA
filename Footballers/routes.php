@@ -40,6 +40,7 @@ $router->add('/logout','middlewares/logout.php');
 //*CREAR MUNDIALES
 
 $router->add('/crearMundial','controllers/crearMundial.php');
+$router->add('/mundial-process','controllers/crearMundial-process.php');
 
 //*MAIN 
 //?Esta es la pagina de los mundiales
@@ -81,7 +82,7 @@ $router->add('/reportesLikes','controllers/reportesLikes.php');
 
 
 //!CATEGORIAS
-$router->add('/reportesLikes','controllers/reportesLikes.php');
+$router->add('/crearCategorias','controllers/crearCategorias.php');
 
 //! SOLO SIRVE PARA HACER TEST
 $router->add('/test','controllers/hola.php');

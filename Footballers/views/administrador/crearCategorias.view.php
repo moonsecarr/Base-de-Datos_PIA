@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>footballers</title>
+    <title>CrearMundial</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
+
 <header class="main_header" style="position: static;">
     <div class="row" id="componentes_header">
         <div class="col align-items-center">
@@ -38,38 +39,7 @@
 </header>
 
 <body>
-    <div class=".container-fluid body_main">
-        <div class="row align-items-center" id="row_mundiales">
-            <div class="col">
-                MUNDIALES
-            </div>
-        </div>
-
-        <div class="row align-items-center gx-2 gy-2" style="margin: 2px;">
-            <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
-
-                <div class="img_mundial_card">
-                    <a href="/perfilMundial">
-                        <img class="img-fluid imagen_mundi" src="/assets/image/uruguay.jpg">
-                    </a>
-                </div>
-
-                <div class="name_mundial_card d-flex justify-content-between align-items-cente">
-                    <p name="nombreMundial" class="float-start nombreMundial">URUGUAY</p>
-                    <p name="yearMundial" class="nombreMundial">1930</p>
-                </div>
-
-
-            </div>
-
-
-
-        </div>
-    </div>
-
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
 </body>
 
 </html>
