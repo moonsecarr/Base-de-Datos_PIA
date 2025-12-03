@@ -9,14 +9,22 @@
         <link rel="stylesheet" href="/Pantallas_PIA/styles.css" />
     </head>
     <header class="main_header" style="position: static;">
-        <div class="row" id="componentes_header">
+        <div class="row align-items-center" id="componentes_header">
             <div class="col align-items-center">
                 <a href="/Pantallas_PIA/main.html" class="iconos_link me-3" title="Página Principal">
                     <img src="/Pantallas_PIA/assets/footballers.png" class="float-start imagen_logo" alt="nameapp">
                 </a>  
             </div>
+
+            <div class="col d-flex nav_bar align-items-center justify-content-center" >
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 barraNav" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn btn-outline-success btn_Nav" type="submit"><img class="iconos_img" src="/assets/iconos/Search.png"></button>
+                </form>
+
+            </div>
         
-            <div class="col iconos d-flex justify-content-end align-items-center">
+            <div class="col iconos d-flex justify-content-end">
                 <a href="/Pantallas_PIA/ReporteLikes.html" class="iconos_link me-3" title="Reporte de Likes">
                     <img src="/Pantallas_PIA/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
                 </a>
