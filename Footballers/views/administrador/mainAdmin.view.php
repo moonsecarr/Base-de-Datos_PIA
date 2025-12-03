@@ -23,7 +23,7 @@
                     <button class="btn btn-outline-success btn_Nav" type="submit"><img class="iconos_img" src="/assets/iconos/Search.png"></button>
                 </form>
 
-            </div>
+        </div>
 
         <div class="col iconos d-flex justify-content-end">
             <a href="/crearMundial" class="iconos_link me-3" title="Crear mundiales">
