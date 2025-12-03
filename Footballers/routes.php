@@ -85,6 +85,10 @@ $router->add('/reportesLikes','controllers/reportesLikes.php');
 //!CATEGORIAS
 $router->add('/crearCategorias','controllers/crearCategorias.php');
 
+$router->add('/categoria-process','controllers/categoria-process.php');
+
+$router->add('/actualizar_estado','controllers/actualizar-estado.php');
+
 //! SOLO SIRVE PARA HACER TEST
 $router->add('/test','controllers/hola.php');
 // Para métodos específicos

@@ -1,25 +1,26 @@
 
-//*Es para la foto de perfil 
+document.querySelectorAll('.form-check-input').forEach(function(input) {
+    input.addEventListener('change', function() {
+        let idCategoria = this.dataset.id;
+        let estado = this.checked ? 1 : 0;
 
-document.getElementById('input_Usuario_IS').addEventListener('change', function (e) {
-    const fileName = document.getElementById('file');
-    if (this.files && this.files.length > 0) {
-        fileName.textContent = this.files[0].name;
-    } else {
-        fileName.textContent = 'No se ha seleccionado ningún archivo';
-    }
+        fetch('/actualizar_estado', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'idCategoria=' + idCategoria + '&estado=' + estado
+        })
+        .then(res => res.text())
+        .then(data => console.log(data));
+    });
 });
 
-
-
-//Todo:Es el json de los errores de registro-process
-
-const form = document.getElementById("forms_mundial");
+//Todo:Es el json de los errores de editar
+ const form = document.getElementById("form_Categoria");
  
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    fetch("/mundial-process", {
+    fetch("/categoria-process", {
         method: "POST",
         body: new FormData(form)
     })
@@ -46,7 +47,7 @@ form.addEventListener("submit", function(e) {
 
             Swal.fire({
                 icon: "success",
-                title: "¡Mundial registrado!",
+                title: "¡Categoria registrada!",
                 text: data.message,
                 background: "#0d0c0dff",
                 draggable: true,
@@ -61,7 +62,7 @@ form.addEventListener("submit", function(e) {
                 showConfirmButton: true
             }).then(() => {
                
-                window.location.href = "/administrador/main";
+                window.location.href = "/crearCategorias";
             });
 
         }
@@ -83,22 +84,52 @@ form.addEventListener("submit", function(e) {
             allowOutsideClick: false
         }).then(() => {
                
-                window.location.href = "/crearMundial";
+                window.location.href = "/crearCategorias";
         });
 
 
     });
 });
- 
 
+//!Es para ver que llega de json  , variables
 
-//!Es para ver que llega de json
-/* const form = document.getElementById("forms_mundial");
+/* const form = document.getElementById("form_Categoria");
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    fetch("/mundial-process", { method: "POST", body: new FormData(form) })
+    fetch("/categoria-process", {
+    method: "POST",
+    body: new FormData(form)
+})
+.then(res => {
+    console.log("Status:", res.status);
+    return res.text(); // primero mira el texto crudo
+})
+.then(text => {
+    console.log("Respuesta cruda:", text);
+    try {
+        const data = JSON.parse(text);
+        console.log("JSON parseado:", data);
+        // aquí tu lógica con Swal...
+    } catch (err) {
+        console.error("No es JSON válido:", err);
+    }
+})
+.catch(err => {
+    console.error("Error de conexión:", err);
+});
+
+});
+ */
+//!Es para ver que llega de json
+/* 
+const form = document.getElementById("form_Categoria");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch("/categoria-process", { method: "POST", body: new FormData(form) })
   .then(res => {
     console.log("Status:", res.status);
     return res.text(); // primero ver texto crudo
@@ -106,4 +137,4 @@ form.addEventListener("submit", function(e) {
   .then(txt => console.log("Respuesta cruda:", txt))
   .catch(err => console.error("Error:", err));
 
-});     */
+});   */
