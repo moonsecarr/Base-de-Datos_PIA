@@ -39,9 +39,10 @@
 </header>
 
 <body>
-    <div class=".container-fluid">
+    <form id="forms_mundial" action="/mundial-process" method="POST" enctype="multipart/form-data">
+        <div class=".container-fluid">
 
-        <form id="forms_mundial" action="/mundial-process" method="POST" enctype="multipart/form-data">
+
             <div class="row align-items-center  vh-100" id="componentes_body_index">
                 <div class="col-4 position-relative" id="left-panel">
                     <div class="half-circle">
@@ -120,10 +121,11 @@
 
                 </div>
 
-        </form>
-    </div>
 
-    <script  src="/assets/js/mundial.js"></script>
+            </div>
+    </form>
+    <script src="/assets/js/mundial.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <script>
     function adjustHeight(el) {

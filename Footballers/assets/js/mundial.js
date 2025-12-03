@@ -14,7 +14,7 @@ document.getElementById('input_Usuario_IS').addEventListener('change', function 
 
 //Todo:Es el json de los errores de registro-process
 
-const form = document.getElementById("forms_mundial");
+/* const form = document.getElementById("forms_mundial");
  
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -81,15 +81,19 @@ form.addEventListener("submit", function(e) {
             confirmButtonText: 'ok',
             showConfirmButton: true,
             allowOutsideClick: false
+        }).then(() => {
+               
+                window.location.href = "/crearMundial";
         });
+
 
     });
 });
-
+ */
 
 
 //!Es para ver que llega de json
-/* const form = document.getElementById("forms_mundial");
+const form = document.getElementById("forms_mundial");
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -102,4 +106,4 @@ form.addEventListener("submit", function(e) {
   .then(txt => console.log("Respuesta cruda:", txt))
   .catch(err => console.error("Error:", err));
 
-});    */
+});    
