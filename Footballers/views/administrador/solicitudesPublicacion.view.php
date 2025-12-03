@@ -11,22 +11,14 @@
 </head>
 
 <header class="main_header" style="position: static;">
-    <div class="row align-items-center" id="componentes_header">
+    <div class="row" id="componentes_header">
         <div class="col align-items-center">
             <a href="/administrador/main" class="iconos_link me-3" title="Página Principal">
                 <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
             </a>
         </div>
 
-        <div class="col d-flex nav_bar align-items-center justify-content-center" >
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 barraNav" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success btn_Nav" type="submit"><img class="iconos_img" src="/assets/iconos/Search.png"></button>
-                </form>
-
-        </div>
-
-        <div class="col iconos d-flex justify-content-end">
+        <div class="col iconos d-flex justify-content-end align-items-center">
             <a href="/crearMundial" class="iconos_link me-3" title="Crear mundiales">
                 <img src="/assets/iconos/earth.png" class="float-end iconos_img" alt="icono de likes">
             </a>
@@ -52,60 +44,78 @@
         <div class="col">
             <h1 class="text-center" id="title_page" style="margin-bottom: 10px;font-size: 40px;">SOLICITUD DE PUBLICACIONES</h1>
 
-            <?php
+            
+            <!-- Reemplaza el bloque actual de contenedores con este ROW/COL limpio -->
+            <div class="row justify-content-center gx-4 gy-4">
 
+            <?php
             use Core\Database;
 
             $config = require 'core/config.php';
             $db = new Database($config);
 
             // Llamada a tu procedimiento almacenado
-            $stmt = $db->query("CALL getMundiales()");
+            $stmt = $db->query("CALL getPublicacionesPendientes()");
 
             // Obtener resultados como array asociativo
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+            
             foreach ($rows as $row) {
-                $imgData = base64_encode($row['logotipo']);
-                $src = 'data:image/jpeg;base64,' . $imgData;
 
+                $mime = $row['mime_type'] ?? '';
+                $src = '';
+
+                if (!empty($row['multimedia'])) {
+                    $data = base64_encode($row['multimedia']);
+                    $src = "data:$mime;base64,$data";
+                }
+
+
+                // Prepara el bloque multimedia según el tipo
+                if ($mime !== '' && strpos($mime, 'image') !== false) {
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='$src' />";
+                } elseif ($mime !== '' && strpos($mime, 'video') !== false) {
+                    $multimediaHtml = "<video class='multimedia_MP w-50 mx-auto d-block 'controls>
+                              <source src='$src' type='$mime'>
+                           </video>";
+                } else {
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='/assets/image/pele.jpg' />";
+                }
                 echo '
-                 <div class="row justify-content-center gx-4 gy-4">
-
-
                 <div class="col-12 col-md-4 contenedorMP">
 
                     <div class="publicacion-card">
                         <!-- 1. Título de Usuario (Usuario + Estado) -->
                         <div class="card-header-mp">
-                            <p class="NamePubli_MP" name="NamePubli_MP">Pelé: leyenda del Mundial</p>
+                            <p class="NamePubli_MP" name="NamePubli_MP">' . htmlspecialchars($row['titulo']). '</p>
                         </div>
 
-                        <!-- 2. Imagen -->
+                        
                         <div class="card-image-mp">
-                            <img class="img-fluid multimedia_MP" src="/assets/image/pele.jpg">
+                        ' . $multimediaHtml . '
                         </div>
-
+                    
                         <!-- 3. Descripción -->
                         <div class="card-description-mp">
-                            <p>El verdadero protagonista del mundial de México 1970 sin duda algun afue Pelé, mi ídolo.</p>
+                            <p>' . htmlspecialchars($row['descripcion']). '</p>
                         </div>
 
                         <!-- 4. Botón de Estado (Ejemplo de "Aprobada") -->
                         <div class="col d-flex justify-content-center card-footer-mp">
                             <button class="estado-publi" style="background-color: #01C755;">Aprobar</button>
-
+                           
                             <button class="estado-publi" style="background-color: #D60004;">Rechazar</button>
                         </div>
                     </div>
 
-                </div>
-
-
-            </div>';
+                </div>';
             }
             ?>
-           
+                
+
+
+            </div>
         </div>
     </div>
 </body>

@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $file_extension = strtolower(pathinfo($archivo['name'], PATHINFO_EXTENSION));
         $file_type = $archivo['type'];
-
+        $MimeType   = $file_type;
         if (in_array($file_type, $tipos_permitidos) && in_array($file_extension, $extensiones_permitidas)) {
             $max_size = 20 * 1024 * 1024; // 20MB
             if ($archivo['size'] <= $max_size) {
@@ -94,14 +94,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
 
-        $sql = "CALL sp_publicacion(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "CALL sp_publicacion(?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
        
 
         $params = [
             1,                  // opcion
             $Titulo,            // titulo
             $Descripcion,       // descripcion
-            $Multimedia,        // multimedia
+            $Multimedia,  
+            $MimeType,      // multimedia
             $estadoPublicacion, // estado
             NULL,               // fechaElaboracion (se ignora, se usa NOW())
             NULL,               // fechaAprobacion (se ignora, se usa NOW())
