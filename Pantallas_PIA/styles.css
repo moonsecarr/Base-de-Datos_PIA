@@ -22,7 +22,7 @@ body{
 }
 
 #componentes_header{
-    padding: 20px;
+    padding: 10px;
 }
 
 /* ---------------------------------Styles del forms de Inicio de Sesión -------------------------------- */
@@ -738,4 +738,22 @@ body{
     padding-right: 15px;
     border-radius: 25px;
     border-color: none;
+}
+
+/*---------------------------BARRA DE NAVEGACION------------------------------*/
+.nav_bar{
+    font-family: var(--font--2);
+    border-radius: 15px;
+}
+
+.barraNav{
+    font-family: var(--font--2);
+    border-radius: 25px;
+    width: 500px;
+
+}
+
+.btn_Nav{
+    border: 0;
+    border-radius: 100px;
 }
