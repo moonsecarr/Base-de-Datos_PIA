@@ -1,57 +1,39 @@
 <?php
 session_start();
-use Core\Database;
-// Incluir la configuración y la clase Database
-$config = require 'core/config.php';
 
-// Crear instancia de la base de datos
+use Core\Database;
+
+$config = require 'core/config.php';
 $db = new Database($config);
 
-//*Es la cabecera para lod json 
-header('Content-Type: application/json; charset=utf-8');
 
 // Verificar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    //!   MUCHO OJO ES EL NAME JAJAJA
-    $idUsuario = $_SESSION['session_id'];
-    $categoria = trim($_POST['input_newCat']);
-    
+    $idUsuario   = $_SESSION['session_id'] ?? null;
+    $idCategoria = $_POST['idCategoria'] ?? null;
+    $estado      = $_POST['estado'] ?? null;
 
-
-    // Validaciones básicas
-    if ( empty($categoria)
-    ) {
+    if (!$idUsuario || !$idCategoria || $estado === null) {
         echo json_encode([
             "status" => "error",
-            "message" => "Todos los campos son obligatorios."
+            "message" => "Datos inválidos."
         ]);
         exit;
     }
 
-    //Categoria
-
-    $soloLetrasYEspacios = "/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/";
-
-    if (!preg_match($soloLetrasYEspacios, $categoria)) {
-        echo json_encode([
-            "status" => "error",
-            "message" => "La categoria   solo puede contener letras y espacios."
-        ]);
-        exit;
-    }
-
-  
     try {
 
 
-        $sql = "CALL sp_categoria(?, ?, ?, ?,?)";
+
+
+        $sql = "CALL sp_categoria(?, ?, ?, ?, ?)";
         $params = [
-            1,
-            null,
-            $categoria,
-            null,
-            $idUsuario
+            2,              
+            $idCategoria,   
+            NULL,
+            $estado,         
+            $idUsuario      
         ];
 
         $stmt = $db->query($sql, $params);
@@ -72,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (Exception $e) {
         error_log("Error en registro: " . $e->getMessage());
 
-        
+
         $error = "Error del sistema. Por favor, intente más tarde.";
 
         // Si quieres mostrar el error exacto solo en desarrollo:

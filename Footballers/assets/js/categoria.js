@@ -1,4 +1,18 @@
 
+document.querySelectorAll('.form-check-input').forEach(function(input) {
+    input.addEventListener('change', function() {
+        let idCategoria = this.dataset.id;
+        let estado = this.checked ? 1 : 0;
+
+        fetch('/actualizar_estado', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'idCategoria=' + idCategoria + '&estado=' + estado
+        })
+        .then(res => res.text())
+        .then(data => console.log(data));
+    });
+});
 
 //Todo:Es el json de los errores de editar
  const form = document.getElementById("form_Categoria");
@@ -78,6 +92,7 @@ form.addEventListener("submit", function(e) {
 });
 
 //!Es para ver que llega de json  , variables
+
 /* const form = document.getElementById("form_Categoria");
 
 form.addEventListener("submit", function(e) {
@@ -107,11 +122,9 @@ form.addEventListener("submit", function(e) {
 
 });
  */
-
-
 //!Es para ver que llega de json
-
-/* const form = document.getElementById("form_Categoria");
+/* 
+const form = document.getElementById("form_Categoria");
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();

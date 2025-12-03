@@ -56,18 +56,44 @@
 
                 </div>
             </form>
-            <div class="row d-flex flex-column align-items-center contenedorCat">
-                <div class="col d-flex containerCAT" style="color:aliceblue">
-                    <p style="width: 100%;" name="name_categoria">Nombre Categoria</p>
 
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                    </div>
+            <?php
+            
+            session_start();
+            use Core\Database;
+
+            $config = require 'core/config.php';
+            $db = new Database($config);
+           
+            $idUsuario = $_SESSION['session_id'];
+            // Llamada a tu procedimiento almacenado
+            $stmt = $db->query("CALL getCategoriasPorUsuario($idUsuario)");
+
+            // Obtener resultados como array asociativo
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($rows as $row) {
+
+                // checked si estado = 1
+                $checked = $row['estado'] == 1 ? 'checked' : '';
+                echo ' 
+                 <div class="row d-flex flex-column align-items-center contenedorCat">
+                <div class="col d-flex containerCAT" style="color:aliceblue">
+                    <p style="width: 100%;" name="name_categoria">'. $row['nombreCategoria'] . '</p>
+
+                     <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" 
+                       data-id="' . $row['idCategoria'] . '" ' . $checked . '>
+                   </div>
 
                 </div>
 
 
-            </div>
+            </div>';
+            }
+            ?>
+
+
         </div>
     </div>
 
