@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-      //Nombre completo
+    //titulo
 
     $soloLetrasYEspacios = "/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/";
 
@@ -46,6 +46,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    $sql = "CALL sp_validarMundialUnico(?)";
+    $stmt = $db->query($sql, [$Titulo]);
+
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+    // avanzar por todos los result sets aunque no los uses
+    while ($stmt->nextRowset()) {
+        // aquí no necesitas poner nada, basta con recorrer
+    }
+
+    $stmt->closeCursor(); // ahora sí se libera todo
+    if ($resultado && $resultado['mundial_existe']> 0) {
+
+        echo json_encode([
+            "status" => "error",
+            "message" => "Este mundial ya está registrado."
+        ]);
+        exit; // detiene el registro
+
+    }
     //!Multimedia
     $Multimedia = null;
     

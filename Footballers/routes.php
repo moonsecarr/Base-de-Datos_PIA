@@ -51,6 +51,7 @@ $router->add('/administrador/main','controllers/mainAdmin.php');
 //*PERFIL MUNDIAL
 
 $router->add('/perfilMundial','controllers/perfilMundial.php');
+$router->add('/admin/perfilMundial','controllers/verMundialesAdmin.php');
 
 
 
@@ -79,9 +80,6 @@ $router->add('/publicacion','controllers/publicacion.php');
 
 //*REPORTES DE LIKES
 $router->add('/reportesLikes','controllers/reportesLikes.php');
-
-//*CREAR CATEGORIAS
-$router->add('/crearCategorias','controllers/crearCategoria.php');
 
 
 //!CATEGORIAS

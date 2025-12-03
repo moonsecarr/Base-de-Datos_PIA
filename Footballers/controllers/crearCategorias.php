@@ -4,4 +4,4 @@ $page = 'crearCategorias';   //! Cambias el nombre de la page en este caso crear
 
 $currentPage = $_SERVER['REQUEST_URI'];
 
-require 'views/administrador/crearCategorias.view.php';  //! Aqui haces referencia a la vista de crearMundiales.view.php
+require 'views/administrador/crearCategoria.view.php';  //! Aqui haces referencia a la vista de crearMundiales.view.php

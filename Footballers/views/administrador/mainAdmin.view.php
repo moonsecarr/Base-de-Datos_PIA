@@ -46,7 +46,7 @@
         </div>
 
         <div class="row align-items-center gx-2 gy-2" style="margin: 2px;">
-            <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
+            <!-- <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
 
                 <div class="img_mundial_card">
                     <a href="/perfilMundial">
@@ -60,7 +60,40 @@
                 </div>
 
 
-            </div>
+            </div> -->
+
+            <?php
+          
+            use Core\Database;
+
+            $config = require 'core/config.php';
+            $db = new Database($config);
+
+            // Llamada a tu procedimiento almacenado
+            $stmt = $db->query("CALL getMundiales()");
+
+            // Obtener resultados como array asociativo
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($rows as $row) {
+                $imgData = base64_encode($row['logotipo']);
+                $src = 'data:image/jpeg;base64,' . $imgData;
+
+                echo '
+            <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
+                    <div class="img_mundial_card">
+                        <a href="/admin/perfilMundial?idMundial=' . $row['idMundial'] . '">
+                            <img class="img-fluid imagen_mundi" src="' . $src . '">
+                        </a>
+                    </div>
+                    <div class="name_mundial_card d-flex justify-content-between align-items-center">
+                        <p class="float-start nombreMundial">' . $row['nombre'] . '</p>
+                        <p class="nombreMundial">' . $row['año'] . '</p>
+                    </div>
+            </div>';
+            }
+            ?>
+
 
 
 
