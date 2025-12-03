@@ -10,7 +10,68 @@ document.querySelectorAll('.form-check-input').forEach(function(input) {
             body: 'idCategoria=' + idCategoria + '&estado=' + estado
         })
         .then(res => res.text())
-        .then(data => console.log(data));
+        .then(data => {
+        console.log("Respuesta del servidor:", data); // depuración
+        if (data.status === "error") {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: data.message,
+                background: "#0d0c0dff",
+                draggable: true,
+                customClass: {
+                    title: 'mi-titulo',
+                    confirmButton: 'mi-boton'
+                },
+                confirmButtonText: 'ok',
+                showConfirmButton: true,
+                allowOutsideClick: false
+            });
+
+        } else {
+
+            Swal.fire({
+                icon: "success",
+                title: "¡Categoria actualizada!",
+                text: data.message,
+                background: "#0d0c0dff",
+                draggable: true,
+                customClass: {
+                    title: 'mi-titulo',
+                    confirmButton: 'mi-boton'
+                },
+                confirmButtonText: 'ok',
+                timer: 3000,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                showConfirmButton: true
+            }).then(() => {
+               
+                window.location.href = "/crearCategorias";
+            });
+
+        }
+    }).catch(err => {
+        console.error(err);
+        Swal.fire({
+            icon: "error",
+            title: "Error inesperado",
+            text: "No se pudo conectar con el servidor",
+            background: "#0d0c0dff",
+            draggable: true,
+            customClass: {
+                title: 'mi-titulo',
+                confirmButton: 'mi-boton'
+            },
+            confirmButtonText: 'ok',
+            showConfirmButton: true,
+            allowOutsideClick: false
+        }).then(() => {
+               
+                window.location.href = "/crearCategorias";
+        });
+
+
     });
 });
 
