@@ -65,6 +65,8 @@ $router->add('/misPublicaciones','controllers/misPublicaciones.php');
 $router->add('/PublicacionesADMIN','controllers/PublicacionesADMIN.php');
 $router->add('/solicitudesPublicacion','controllers/solicitudPublicacion.php');
 
+$router->add('/admin/aprobarPublicacion','controllers/aprobarPublicacion.php');
+
 //*CREAR PUBLICACION
 $router->add('/crearPublicacion','controllers/crearPublicacion.php');
 $router->add('/crearPublicacion-process','controllers/crearPublicacion-process.php');

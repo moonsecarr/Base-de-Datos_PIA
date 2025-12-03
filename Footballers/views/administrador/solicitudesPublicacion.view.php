@@ -43,52 +43,53 @@
 
         <div class="col">
             <h1 class="text-center" id="title_page" style="margin-bottom: 10px;font-size: 40px;">SOLICITUD DE PUBLICACIONES</h1>
-
             
+
             <!-- Reemplaza el bloque actual de contenedores con este ROW/COL limpio -->
             <div class="row justify-content-center gx-4 gy-4">
 
-            <?php
-            use Core\Database;
+                <?php
 
-            $config = require 'core/config.php';
-            $db = new Database($config);
+                use Core\Database;
 
-            // Llamada a tu procedimiento almacenado
-            $stmt = $db->query("CALL getPublicacionesPendientes()");
+                $config = require 'core/config.php';
+                $db = new Database($config);
 
-            // Obtener resultados como array asociativo
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                // Llamada a tu procedimiento almacenado
+                $stmt = $db->query("CALL getPublicacionesPendientes()");
 
-            
-            foreach ($rows as $row) {
-
-                $mime = $row['mime_type'] ?? '';
-                $src = '';
-
-                if (!empty($row['multimedia'])) {
-                    $data = base64_encode($row['multimedia']);
-                    $src = "data:$mime;base64,$data";
-                }
+                // Obtener resultados como array asociativo
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-                // Prepara el bloque multimedia según el tipo
-                if ($mime !== '' && strpos($mime, 'image') !== false) {
-                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='$src' />";
-                } elseif ($mime !== '' && strpos($mime, 'video') !== false) {
-                    $multimediaHtml = "<video class='multimedia_MP w-50 mx-auto d-block 'controls>
+                foreach ($rows as $row) {
+
+                    $mime = $row['mime_type'] ?? '';
+                    $src = '';
+
+                    if (!empty($row['multimedia'])) {
+                        $data = base64_encode($row['multimedia']);
+                        $src = "data:$mime;base64,$data";
+                    }
+
+
+                    // Prepara el bloque multimedia según el tipo
+                    if ($mime !== '' && strpos($mime, 'image') !== false) {
+                        $multimediaHtml = "<img class='img-fluid multimedia_MP' src='$src' />";
+                    } elseif ($mime !== '' && strpos($mime, 'video') !== false) {
+                        $multimediaHtml = "<video class='multimedia_MP w-50 mx-auto d-block 'controls>
                               <source src='$src' type='$mime'>
                            </video>";
-                } else {
-                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='/assets/image/pele.jpg' />";
-                }
-                echo '
+                    } else {
+                        $multimediaHtml = "<img class='img-fluid multimedia_MP' src='/assets/image/pele.jpg' />";
+                    }
+                    echo '
                 <div class="col-12 col-md-4 contenedorMP">
 
                     <div class="publicacion-card">
                         <!-- 1. Título de Usuario (Usuario + Estado) -->
                         <div class="card-header-mp">
-                            <p class="NamePubli_MP" name="NamePubli_MP">' . htmlspecialchars($row['titulo']). '</p>
+                            <p class="NamePubli_MP" name="NamePubli_MP">' . htmlspecialchars($row['titulo']) . '</p>
                         </div>
 
                         
@@ -98,26 +99,35 @@
                     
                         <!-- 3. Descripción -->
                         <div class="card-description-mp">
-                            <p>' . htmlspecialchars($row['descripcion']). '</p>
+                            <p>' . htmlspecialchars($row['descripcion']) . '</p>
                         </div>
 
-                        <!-- 4. Botón de Estado (Ejemplo de "Aprobada") -->
-                        <div class="col d-flex justify-content-center card-footer-mp">
-                            <button class="estado-publi" style="background-color: #01C755;">Aprobar</button>
-                           
-                            <button class="estado-publi" style="background-color: #D60004;">Rechazar</button>
-                        </div>
+                            <!-- 4. Botón de Estado (Ejemplo de "Aprobada") -->
+                            <div class="col d-flex justify-content-center card-footer-mp">
+                               <form id="formAceptar"   action="/admin/aprobarPublicacion" method="post">
+                               <input type="hidden" name="idPublicacion" value="' . $row['idPublicacion'] . '"">
+
+                                <button class="estado-publi" style="background-color: #01C755;">Aprobar</button>
+                               </form>
+
+                              
+                               <button class="estado-publi" style="background-color: #D60004;">Rechazar</button>
+
+                            </div>
                     </div>
 
                 </div>';
-            }
-            ?>
+                }
+                ?>
+
                 
-
-
             </div>
         </div>
     </div>
+
+    <script src="/assets/js/solicitud.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
