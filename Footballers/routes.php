@@ -66,6 +66,9 @@ $router->add('/publicacion','controllers/publicacion.php');
 //*REPORTES DE LIKES
 $router->add('/reportesLikes','controllers/reportesLikes.php');
 
+//*CREAR CATEGORIAS
+$router->add('/crearCategorias','controllers/crearCategoria.php');
+
 
 
 //! SOLO SIRVE PARA HACER TEST

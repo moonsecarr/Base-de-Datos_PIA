@@ -673,3 +673,69 @@ body{
     padding: 8px;
     height: fit-content;
 }
+
+/* ---------------------------------------------Perfil de Categoria---------------------------------------*/
+.contenedorCat{
+    margin: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.containerCAT{
+    background-color: var(--color-4);
+    border-radius: 15px;
+    padding-right: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-family: var(--font--2);
+    font-size: 18px;
+    margin: 20px;
+    width: 60%;
+}
+
+.input_newCat{
+    background-color: var(--color-6); 
+    border: none; 
+    height: 40px; 
+    color: white; 
+    padding: 15px; 
+    font-size: 15px; 
+    font-family: var(--font--2);
+    
+    border-radius: 25px; 
+    width: 80%;
+}
+
+.contenedorNewCat{
+    color: var(--color-6);
+    font-size: 15px;
+    font-family: var(--font--1);
+    
+
+    
+    /* 💡 CLAVE: Definir un ancho máximo para que mx-auto pueda centrar el bloque */
+    max-width: 600px; /* Ejemplo: Limita el ancho a 600px en escritorio */
+    width: 100%; /* Asegura que en móvil ocupe el 90% del espacio, respetando el max-width */
+    
+    /* Mantener las propiedades internas para alinear los elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Añadir un margen vertical para separarlo del título y la lista */
+    margin-top: 20px;
+    margin-bottom: 30px; 
+    margin-left: 27%;
+    margin-right: 25%;
+}
+
+#btn_CrearCat{
+    font-family: var(--font--1);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+    border-color: none;
+}
