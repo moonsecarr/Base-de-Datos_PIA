@@ -51,7 +51,7 @@ $router->add('/administrador/main','controllers/mainAdmin.php');
 //*PERFIL MUNDIAL
 
 $router->add('/perfilMundial','controllers/perfilMundial.php');
-$router->add('/admin/perfilMundial','controllers/verMundialesAdmi.php');
+$router->add('/admin/perfilMundial','controllers/verMundialesAdmin.php');
 
 
 

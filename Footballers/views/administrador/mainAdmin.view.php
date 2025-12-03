@@ -82,7 +82,7 @@
                 echo '
             <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     <div class="img_mundial_card">
-                        <a href="/admin/perfilMundial">
+                        <a href="/admin/perfilMundial?idMundial=' . $row['idMundial'] . '">
                             <img class="img-fluid imagen_mundi" src="' . $src . '">
                         </a>
                     </div>

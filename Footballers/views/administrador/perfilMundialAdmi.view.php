@@ -40,7 +40,7 @@
 
 <body>
     <div class=".container-fluid body_main">
-        <div class="row  d-flex align-items-center apartado_Usuario">
+        <!--         <div class="row  d-flex align-items-center apartado_Usuario">
             <div class="col-5 d-flex justify-content-end foto_usuario">
                 <img src="/assets/image/uruguay.jpg" class="fotito_perfil_Mundial">
             </div>
@@ -72,6 +72,45 @@
                 <p class="name_campeon" name="mvp">Pelé</p>
             </div>
         </div>
+
+ -->
+        <?php
+
+        use Core\Database;
+
+        $config = require 'core/config.php';
+        $db = new Database($config);
+        
+        $id = $_GET['idMundial'] ?? null;
+        if ($id) {
+            $stmt = $db->query("CALL getMundialPorId($id)");
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $imgData = base64_encode($row['logotipo']);
+            $src = 'data:image/jpeg;base64,' . $imgData;
+
+            echo '
+            <div class="row d-flex align-items-center apartado_Usuario">
+                <div class="col-5 d-flex justify-content-end foto_usuario">
+                    <img src="' . $src . '" class="fotito_perfil_Mundial">
+                </div>
+                <div class="col-7 info_usuario">
+                    <p class="nomMundial">' . $row['nombre'] . ' ' . $row['año'] . '</p>
+                    <p class="desMundial">' . $row['reseña'] . '</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center align-items-center estadísticas_Mundial">
+                <div class="col-2 apartado_Esta"><p class="etiq_estadis">Campeón</p><p>' . $row['campeon'] . '</p></div>
+                <div class="col-2 apartado_Esta"><p class="etiq_estadis">Subcampeón</p><p>' . $row['subcampeon'] . '</p></div>
+                <div class="col-2 apartado_Esta"><p class="etiq_estadis">Mayor goleador</p><p>' . $row['mayorGoleador'] . '</p></div>
+                <div class="col-2 apartado_Esta"><p class="etiq_estadis">MVP</p><p>' . $row['MVP'] . '</p></div>
+            </div>';
+        }
+
+        ?>
+
+
+
 
         <div class="row gx-1 gy-1 mt-4 contenedor_publicaciones" style="margin: 2px;">
             <div class="col-6 col-md-3 mundial_card">
