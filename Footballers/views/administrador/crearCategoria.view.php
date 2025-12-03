@@ -38,20 +38,24 @@
 </header>
 
 <body>
+
     <div class=".container-fluid body_main">
         <div class="col">
-            <h1 class="text-center" id="title_page" style="margin-bottom: 40px;font-size: 40px;">CATEGORÍAS</h1>
-            <div class="col d-flex flex-column contenedorNewCat">
-                <div class="col d-flex">
-                    <label style="width: 40%;" name="name_categoria">NUEVA CATEGORÍA:</label>
-                    <input type="text" class="form-control input_newCat" name="input_newCat" placeholder="" style="margin-right: 20px;">
-                    <input class="btn btn-primary" type="submit" value="Crear" id="btn_CrearCat" name="btn_CrearCat" style="background-color: #D60004;">
+
+            <form id="form_Categoria" action="/categoria-process" method="POST" enctype="multipart/form-data">
+
+                <h1 class="text-center" id="title_page" style="margin-bottom: 40px;font-size: 40px;">CATEGORÍAS</h1>
+                <div class="col d-flex flex-column contenedorNewCat">
+                    <div class="col d-flex">
+                        <label style="width: 40%;" name="name_categoria">NUEVA CATEGORÍA:</label>
+                        <input type="text" class="form-control input_newCat" name="input_newCat" placeholder="" style="margin-right: 20px;">
+                        <input class="btn btn-primary" type="submit" value="Crear" id="btn_CrearCat" name="btn_CrearCat" style="background-color: #D60004;">
+                    </div>
+
+
+
                 </div>
-
-
-
-            </div>
-
+            </form>
             <div class="row d-flex flex-column align-items-center contenedorCat">
                 <div class="col d-flex containerCAT" style="color:aliceblue">
                     <p style="width: 100%;" name="name_categoria">Nombre Categoria</p>
@@ -62,26 +66,15 @@
 
                 </div>
 
-                <div class="col d-flex containerCAT" style="color:aliceblue">
-                    <p style="width: 100%;" name="name_categoria">Nombre Categoria</p>
-
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                    </div>
-
-                </div>
-                <div class="col d-flex containerCAT" style="color:aliceblue">
-                    <p style="width: 100%;" name="name_categoria">Nombre Categoria</p>
-
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                    </div>
-
-                </div>
 
             </div>
         </div>
     </div>
+
+
+
+    <script src="/assets/js/categoria.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
