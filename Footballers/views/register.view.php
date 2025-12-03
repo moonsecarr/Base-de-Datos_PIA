@@ -20,7 +20,7 @@
 
     <div class="registerContainer">
 
-    <form class="formRegister" action="/register" method="POST" enctype="multipart/form-data" id="registerForm">
+    <form class="formRegister" action="/register-process" method="POST" enctype="multipart/form-data" id="registerForm">
     <h1 id="rTitulo">REGISTRARSE</h1>
 
     <div class="form-grid">

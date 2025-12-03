@@ -140,6 +140,7 @@ body{
     background-color: var(--color-7);
 }
 
+
 /* ---------------------------------Styles del Landing -------------------------------- */
 .main_header{
     height: 50px;
@@ -285,6 +286,28 @@ body{
 .contenedor_publicaciones{
     padding-left: 50px;
     padding-right: 50px;
+}
+
+
+.cerrarSesion{
+    margin-top: -15px;
+    font-family: var(--font--2);
+    font-size: 22px;
+    background-color: var(--color-3);
+    border-radius: 25px;
+    width: fit-content;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: var(--color-6);
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+
+.cerrarSesion:hover {
+    background-color: var(--color-6); 
+    color: var(--color-3);           
+    transform: scale(1);          
 }
 
 /*-------------------------------------Página de Editar Perfil------------------------*/
