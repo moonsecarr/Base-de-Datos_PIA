@@ -1,12 +1,12 @@
 
 //Todo:Es el json de los errores de registro-process
 
-const form = document.getElementById("formAceptar");
+const form = document.getElementById("formRechazar");
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    fetch("/admin/aprobarPublicacion", {
+    fetch("/admin/rechazarPublicacion", {
         method: "POST",
         body: new FormData(form)
     })
@@ -33,7 +33,7 @@ form.addEventListener("submit", function(e) {
 
             Swal.fire({
                 icon: "success",
-                title: "¡Publicacion aprobada!",
+                title: "¡Publicacion rechazada!",
                 text: data.message,
                 background: "#0d0c0dff",
                 draggable: true,
@@ -79,12 +79,13 @@ form.addEventListener("submit", function(e) {
 
 
 //!Es para ver que llega de json
-/* const form = document.getElementById("formAceptar");
+/* 
+const form = document.getElementById("formRechazar");
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    fetch("/admin/aprobarPublicacion", { method: "POST", body: new FormData(form) })
+    fetch("/admin/rechazarPublicacion", { method: "POST", body: new FormData(form) })
   .then(res => {
     console.log("Status:", res.status);
     return res.text(); // primero ver texto crudo
@@ -92,5 +93,6 @@ form.addEventListener("submit", function(e) {
   .then(txt => console.log("Respuesta cruda:", txt))
   .catch(err => console.error("Error:", err));
 
-}); 
-  */
+});    */
+
+ 

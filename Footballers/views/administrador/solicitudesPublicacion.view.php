@@ -105,14 +105,15 @@
                             <!-- 4. Botón de Estado (Ejemplo de "Aprobada") -->
                             <div class="col d-flex justify-content-center card-footer-mp">
                                <form id="formAceptar"   action="/admin/aprobarPublicacion" method="post">
-                               <input type="hidden" name="idPublicacion" value="' . $row['idPublicacion'] . '"">
+                               <input type="hidden" name="idPublicacion" value="' . $row['idPublicacion'] . '">
 
                                 <button class="estado-publi" style="background-color: #01C755;">Aprobar</button>
                                </form>
 
-                              
+                              <form id="formRechazar"   action="/admin/rechazarPublicacion" method="post">
+                               <input type="hidden" name="idPublicacion" value="' . $row['idPublicacion'] . '">
                                <button class="estado-publi" style="background-color: #D60004;">Rechazar</button>
-
+                              </form>
                             </div>
                     </div>
 
@@ -126,6 +127,7 @@
     </div>
 
     <script src="/assets/js/solicitud.js"></script>
+    <script src="/assets/js/rechazar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
