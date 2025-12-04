@@ -18,16 +18,16 @@
             </a>
         </div>
 
-        <div class="col d-flex nav_bar align-items-center justify-content-center" >
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 barraNav" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success btn_Nav" type="submit"><img class="iconos_img" src="/assets/iconos/Search.png"></button>
-                </form>
+        <div class="col d-flex nav_bar align-items-center justify-content-center">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 barraNav" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success btn_Nav" type="submit"><img class="iconos_img" src="/assets/iconos/Search.png"></button>
+            </form>
 
         </div>
 
         <div class="col iconos d-flex justify-content-end">
-            <a href="/reporteLike" class="iconos_link me-3" title="Reporte de Likes">
+            <a href="/reporteLikes" class="iconos_link me-3" title="Reporte de Likes">
                 <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
             </a>
 
@@ -102,23 +102,57 @@
                         <div class="col-5" style="margin-right: 62px;">
                             <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Categoría:</label>
 
-                            <select class="form-select" name="select_Categorias" aria-label="Default select example" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 100%; ">
+                            <?php
+
+                            use Core\Database;
+
+                            $config = require 'core/config.php';
+                            $db = new Database($config);
+
+                            // Llamada al procedimiento almacenado
+                            $stmt = $db->query("CALL getCategorias()");
+
+                            // Obtener resultados como array asociativo
+                            $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            ?>
+
+                            <!-- Select en HTML -->
+                            <select name="select_Categorias" class="form-select"
+                                style="background-color: #6100E9; border: none; height: 40px; color: white; 
+                                padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 100%;">
                                 <option selected>Abrir el menú</option>
-                                <option value="1">Goles</option>
-                                <option value="2">Historia</option>
-                                <option value="3">Leyendas</option>
+                                <?php foreach ($categorias as $cat): ?>
+                                    <option value="<?= $cat['idCategoria'] ?>"><?= htmlspecialchars($cat['nombreCategoria']) ?></option>
+                                <?php endforeach; ?>
                             </select>
+
                         </div>
+
+
 
                         <!-- //*Mundial -->
                         <div class="col-5">
                             <label for="input_Usuario_IS" class="form-label" id="label_text" style="font-size: larger;">Mundial:</label>
 
+
+                             <?php
+
+                           
+
+                            $config = require 'core/config.php';
+                            $db = new Database($config);
+
+                            // Llamada al procedimiento almacenado
+                            $stmt = $db->query("CALL getMundiales()");
+
+                            // Obtener resultados como array asociativo
+                            $mundiales = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            ?>
                             <select class="form-select" name="select_Mundiales" aria-label="Default select example" style="background-color: #6100E9; border: none; height: 40px; color: white; padding: 10px; font-size: 15px; margin: 5px; border-radius: 25px; width: 100%; ">
                                 <option selected>Abrir el menú</option>
-                                <option value="1">Uruguay 1930</option>
-                                <option value="2">Italia 1934</option>
-                                <option value="3">Francia 1938</option>
+                                <?php foreach ($mundiales as $m): ?>
+                                    <option value="<?= $m['idMundial'] ?>"><?= htmlspecialchars($m['nombre']) ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 
@@ -161,9 +195,6 @@
             el.style.overflowY = 'auto'; // 💡 Aparece la barra de desplazamiento
         }
     }
-
-   
-    
 </script>
 
 </html>

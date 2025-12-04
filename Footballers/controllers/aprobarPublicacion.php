@@ -9,7 +9,7 @@ header('Content-Type: application/json; charset=utf-8');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Recuperar el idPublicacion desde POST
-        $idPublicacion = $_POST['idPublicacion'] ?? null;
+        $idPublicacion = $_POST['idAceptar'] ?? null;
 
         if (!$idPublicacion) {
             echo json_encode([
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $out  = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
 
-          if ($out && $out['exito']) {
+        if ($out && $out['exito']) {
             echo json_encode([
                 "status" => "success",
                 "message" => $out['mensaje']

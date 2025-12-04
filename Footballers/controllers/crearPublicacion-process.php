@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Categorias = $_POST['select_Categorias'];
     $Mundial = $_POST['select_Mundiales'];
     $estadoPublicacion = NULL;
+
     // Validaciones básicas
     if (empty($Titulo) || empty($Descripcion) || empty($Categorias) || empty($Mundial)
     ) {
@@ -94,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
 
-        $sql = "CALL sp_publicacion(?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
+        $sql = "CALL sp_publicacion(?, ?, ?, ?, ?,?, ?, ?, ?, ?,?,?)";
        
 
         $params = [
@@ -107,7 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             NULL,               // fechaElaboracion (se ignora, se usa NOW())
             NULL,               // fechaAprobacion (se ignora, se usa NOW())
             1,                  // activo
-            $idUsuario          // idUsuario
+            $idUsuario ,         // idUsuario
+            $Categorias,
+            $Mundial
         ];
         $stmt = $db->query($sql, $params);
         $out  = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -9,43 +9,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
-<header class="main_header" style="position: static;">
-    <div class="row align-items-center" id="componentes_header">
-        <div class="col align-items-center">
-            <a href="/main" class="iconos_link me-3" title="Página Principal">
-                <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
-            </a>
-        </div>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-        <div class="col d-flex nav_bar align-items-center justify-content-center" >
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 barraNav" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success btn_Nav" type="submit"><img class="iconos_img" src="/assets/iconos/Search.png"></button>
-                </form>
+$role = $_SESSION['session_rol'];
 
-        </div>
+if ($role === 'Administrador') {
 
-        <div class="col iconos d-flex justify-content-end">
-            <a href="/reportesLikes" class="iconos_link me-3" title="Reporte de Likes">
-                <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
-            </a>
+    require 'views/partials/headerAdmi.php';
+} else {
 
-            <a href="/misPublicaciones" class="iconos_link me-3" title="Mis Publicaciones">
-                <img src="/assets/iconos/notifications.png" class="float-end iconos_img" alt="icono de notificaciones">
-            </a>
+    require 'views/partials/header.php';
+}
 
-            <a href="/crearPublicacion" class="iconos_link me-3" title="Crear Nuevo Post">
-                <img src="/assets/iconos/Plus square.png" class="float-end iconos_img" alt="icono de nuevo post">
-            </a>
-
-            <a href="/perfilUsuario" class="iconos_link me-3" title="Perfil de Usuario">
-                <img src="/assets/iconos/person (1).png" class="float-end iconos_img" alt="icono de usuario">
-            </a>
-        </div>
-    </div>
-</header>
+?>
 
 <body>
+
+
     <div class=".container-fluid body_main">
 
         <?php
@@ -74,44 +57,66 @@
                     <form action="/logout" method="post">
                         <button type="submit" class="cerrarSesion">Cerrar sesión</button>
                     </form>
-                   
+
                 </div>
                 <a href="/editarPerfil" class="btn_editPer">Editar perfil</a>
             </div>
+
         </div>
 
         <div class="row gx-1 gy-1 mt-4 contenedor_publicaciones" style="margin: 2px;">
-            <div class="col-6 col-md-3 mundial_card">
-                <div class="img_public_card">
-                    <img class="img-fluid imagen_publi" src="/assets/image/uruguay.jpg">
-                </div>
-            </div>
 
-            <div class="col-6 col-md-3 mundial_card">
-                <div class="img_public_card">
-                    <img class="img-fluid imagen_publi" src="/assets/image/italia 1934.jpg">
-                </div>
-            </div>
 
-            <div class="col-6 col-md-3 mundial_card">
-                <div class="img_public_card">
-                    <img class="img-fluid imagen_publi" src="/assets/image/inglaterra 1966.jpeg">
-                </div>
-            </div>
+            <?php
+           
+            use Core\Database;
 
-            <div class="col-6 col-md-3 mundial_card">
-                <div class="img_public_card">
-                    <img class="img-fluid imagen_publi" src="/assets/image/brasil 1950.webp">
-                </div>
-            </div>
+            $config = require 'core/config.php';
+            $db = new Database($config);
+            $id =  $_SESSION['session_id'];
 
-            <div class="col-6 col-md-3 mundial_card">
-                <div class="img_public_card">
-                    <img class="img-fluid imagen_publi" src="/assets/image/suiza 1954.jpg">
-                </div>
-            </div>
+            $stmt = $db->query("CALL getPublicacionId($id)");
+            var_dump($id);
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->closeCursor(); 
+
+            
+            foreach ($rows as $row) {
+                $mime = $row['mime_type'] ?? '';
+                $src = '';
+
+                if (!empty($row['multimedia'])) {
+                    $data = base64_encode($row['multimedia']);
+                    $src = "data:$mime;base64,$data";
+                }
+
+
+                // Prepara el bloque multimedia según el tipo
+                if ($mime !== '' && strpos($mime, 'image') !== false) {
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='$src' />";
+                } elseif ($mime !== '' && strpos($mime, 'video') !== false) {
+                    $multimediaHtml = "<video class='multimedia_MP w-50 mx-auto d-block 'controls>
+                              <source src='$src' type='$mime'>
+                           </video>";
+                } else {
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='/assets/image/pele.jpg' />";
+                }
+
+                echo '
+                  <div class="col-6 col-md-3 mundial_card">
+
+                  <a href="/publicacion?idPublicacion=' . $row['idPublicacion'] . '">
+                           <div class="card-image-mp">' . $multimediaHtml . '</div>
+                  </a>
+                    
+                  </div>
+                ';
+            }
+            ?>
 
         </div>
+
+
     </div>
 </body>
 

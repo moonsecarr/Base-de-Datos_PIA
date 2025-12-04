@@ -105,7 +105,7 @@
                             <!-- 4. Botón de Estado (Ejemplo de "Aprobada") -->
                             <div class="col d-flex justify-content-center card-footer-mp">
                                <form id="formAceptar"   action="/admin/aprobarPublicacion" method="post">
-                               <input type="hidden" name="idPublicacion" value="' . $row['idPublicacion'] . '">
+                               <input type="hidden" name="idAceptar" value="' . $row['idPublicacion'] . '">
 
                                 <button class="estado-publi" style="background-color: #01C755;">Aprobar</button>
                                </form>

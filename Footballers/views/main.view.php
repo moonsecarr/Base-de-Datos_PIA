@@ -11,7 +11,7 @@
     <header class="main_header" style="position: static;">
         <div class="row align-items-center" id="componentes_header">
             <div class="col align-items-center">
-                <a href="/main" class="iconos_link me-3" title="Página Principal">
+                <a href="/operador/main" class="iconos_link me-3" title="Página Principal">
                     <img src="/assets/image/footballers.png" class="float-start imagen_logo" alt="nameapp">
                 </a>  
             </div>
@@ -25,7 +25,7 @@
             </div>
         
             <div class="col iconos d-flex justify-content-end">
-                <a href="/reporteLike" class="iconos_link me-3" title="Reporte de Likes">
+                <a href="/reportesLikes" class="iconos_link me-3" title="Reporte de Likes">
                     <img src="/assets/iconos/favorite.png" class="float-end iconos_img" alt="icono de likes">
                 </a>
 
@@ -52,63 +52,40 @@
             </div>
 
             <div class="row align-items-center gx-2 gy-2" style="margin: 2px;">
-                <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
-                    
-                        <div class="img_mundial_card">
-                            <a href="/perfilMundial">
-                                <img class="img-fluid imagen_mundi" src="/assets/image/uruguay.jpg">
-                            </a>
-                        </div>
+                 <?php
+          
+            use Core\Database;
 
-                        <div class="name_mundial_card d-flex justify-content-between align-items-cente">
-                            <p name="nombreMundial" class="float-start nombreMundial">URUGUAY</p>
-                            <p name="yearMundial" class="nombreMundial">1930</p>
-                        </div>
-                   
-                    
-                </div>
+            $config = require 'core/config.php';
+            $db = new Database($config);
 
-                <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center" >
+            // Llamada a tu procedimiento almacenado
+            $stmt = $db->query("CALL getMundiales()");
+
+            // Obtener resultados como array asociativo
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($rows as $row) {
+                $imgData = base64_encode($row['logotipo']);
+                $src = 'data:image/jpeg;base64,' . $imgData;
+
+                echo '
+            <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
                     <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi" src="/assets/image/italia 1934.jpg">
-                    </div>
-                    <div class="name_mundial_card d-flex justify-content-between align-items-cente">
-                        <p name="nombreMundial" class="float-start nombreMundial">ITALIA</p>
-                        <p name="yearMundial" class="nombreMundial">1934</p>
-                    </div>
-                    
-                </div>
-
-                <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
-                    <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi"  src="/assets/image/inglaterra 1966.jpeg">
-                    </div>
-                    <div class="name_mundial_card d-flex justify-content-between align-items-cente">
-                        <p name="nombreMundial" class="float-start nombreMundial">FRANCIA</p>
-                        <p name="yearMundial" class="nombreMundial">1938</p>
-                    </div>
-                    
-                </div>
-
-                <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
-                    <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi"  src="/assets/image/brasil 1950.webp">
+                        <a href="/admin/perfilMundial?idMundial=' . $row['idMundial'] . '">
+                            <img class="img-fluid imagen_mundi" src="' . $src . '">
+                        </a>
                     </div>
                     <div class="name_mundial_card d-flex justify-content-between align-items-center">
-                        <p name="nombreMundial" class="nombreMundial">BRASIL</p>
-                        <p name="yearMundial" class="nombreMundial">1950</p>
-                    </div> 
-                </div>
-
-                <div class="col-12 col-md-3 mundial_card d-flex justify-content-center align-items-center">
-                    <div class="img_mundial_card">
-                        <img class="img-fluid imagen_mundi"  src="/assets/image/suiza 1954.jpg">
+                        <p class="float-start nombreMundial">' . $row['nombre'] . '</p>
+                        <p class="nombreMundial">' . $row['año'] . '</p>
                     </div>
-                    <div class="name_mundial_card d-flex justify-content-between align-items-center">
-                        <p name="nombreMundial" class="nombreMundial">SUIZA</p>
-                        <p name="yearMundial" class="nombreMundial">1954</p>
-                    </div> 
-                </div>
+            </div>';
+            }
+            ?>
+
+
+
                 
             </div>
         </div>

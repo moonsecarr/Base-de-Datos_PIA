@@ -77,9 +77,6 @@ $router->add('/capturarPublicacion-process','controllers/capturarPublicacion-pro
 //*VER PUBLICACION
 $router->add('/verPublicacion','controllers/verPublicacion.php');
 
-//*REPORTES DE LIKES
-$router->add('/reporteLike','controllers/reporteLike.php');
-
 //*PUBLICACION
 $router->add('/publicacion','controllers/publicacion.php');
 

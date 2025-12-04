@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
+
 <header class="main_header" style="position: static;">
     <div class="row align-items-center" id="componentes_header">
         <div class="col align-items-center">

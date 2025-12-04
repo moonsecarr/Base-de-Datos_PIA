@@ -91,6 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //*Usuario id
             $_SESSION['session_id'] = $usuario['idUsuario'];
+                echo $_SESSION['session_id'];
+                var_dump($_SESSION['session_id']);
 
             //*Nombre completo
             $_SESSION['session_nomCom'] = $usuario['nombre_completo'];

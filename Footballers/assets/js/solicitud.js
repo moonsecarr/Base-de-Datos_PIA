@@ -1,9 +1,8 @@
 
 //Todo:Es el json de los errores de registro-process
 
-const form = document.getElementById("formAceptar");
-
-form.addEventListener("submit", function(e) {
+const forms = document.querySelectorAll(".formAceptar");
+forms.addEventListener("submit", function(e) {
     e.preventDefault();
 
     fetch("/admin/aprobarPublicacion", {
