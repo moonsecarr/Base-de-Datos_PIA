@@ -67,6 +67,7 @@ if ($role === 'Administrador') {
         <div class="row gx-1 gy-1 mt-4 contenedor_publicaciones" style="margin: 2px;">
 
 
+          
             <?php
            
             use Core\Database;
@@ -74,14 +75,16 @@ if ($role === 'Administrador') {
             $config = require 'core/config.php';
             $db = new Database($config);
             $id =  $_SESSION['session_id'];
-
-            $stmt = $db->query("CALL getPublicacionId($id)");
-            var_dump($id);
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          
+          
+            $stmt = $db->query("CALL getPublicacionId(?)",[$id]);
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
             $stmt->closeCursor(); 
-
+            
+            
             
             foreach ($rows as $row) {
+                
                 $mime = $row['mime_type'] ?? '';
                 $src = '';
 
@@ -113,6 +116,7 @@ if ($role === 'Administrador') {
                 ';
             }
             ?>
+
 
         </div>
 
