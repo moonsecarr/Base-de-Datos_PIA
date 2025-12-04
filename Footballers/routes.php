@@ -72,6 +72,8 @@ $router->add('/admin/rechazarPublicacion','controllers/rechazarPublicacion.php')
 $router->add('/crearPublicacion','controllers/crearPublicacion.php');
 $router->add('/crearPublicacion-process','controllers/crearPublicacion-process.php');
 
+$router->add('/capturarPublicacion-process','controllers/capturarPublicacion-process.php');
+
 //*VER PUBLICACION
 $router->add('/verPublicacion','controllers/verPublicacion.php');
 
@@ -91,6 +93,9 @@ $router->add('/crearCategorias','controllers/crearCategorias.php');
 $router->add('/categoria-process','controllers/categoria-process.php');
 
 $router->add('/actualizar_estado','controllers/actualizar-estado.php');
+
+//!FEED GLOBAL
+$router->add('/feedGlobal','controllers/feedGlobal.php');
 
 //! SOLO SIRVE PARA HACER TEST
 $router->add('/test','controllers/hola.php');

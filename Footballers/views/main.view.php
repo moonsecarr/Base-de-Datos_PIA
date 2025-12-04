@@ -46,7 +46,7 @@
     <body>
         <div class=".container-fluid body_main">
             <div class="row align-items-center" id="row_mundiales">
-                <div class="col">
+                <div class="col palabras_Busqueda">
                     MUNDIALES
                 </div>
             </div>

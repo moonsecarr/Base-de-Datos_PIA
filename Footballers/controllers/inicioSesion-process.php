@@ -7,6 +7,8 @@ $config = require 'core/config.php';
 $db = new Database($config);
 
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
