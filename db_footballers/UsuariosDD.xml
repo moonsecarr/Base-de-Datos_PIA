@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="9" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">Field</Data></Cell>
+			<Cell><Data ss:Type="String">Type</Data></Cell>
+			<Cell><Data ss:Type="String">Collation</Data></Cell>
+			<Cell><Data ss:Type="String">Null</Data></Cell>
+			<Cell><Data ss:Type="String">Key</Data></Cell>
+			<Cell><Data ss:Type="String">Default</Data></Cell>
+			<Cell><Data ss:Type="String">Extra</Data></Cell>
+			<Cell><Data ss:Type="String">Privileges</Data></Cell>
+			<Cell><Data ss:Type="String">Comment</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="String">idUsuario</Data></Cell>
+			<Cell><Data ss:Type="String">int</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">NO</Data></Cell>
+			<Cell><Data ss:Type="String">PRI</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">auto_increment</Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Identificador único del usuario</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">nombre_completo</Data></Cell>
+			<Cell><Data ss:Type="String">varchar(250)</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">NO</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Nombre completo del usuario</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">fecha_nacimiento</Data></Cell>
+			<Cell><Data ss:Type="String">date</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Fecha de nacimiento del usuario</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">foto</Data></Cell>
+			<Cell><Data ss:Type="String">longblob</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Fotografía del usuario tipo longblob</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">genero</Data></Cell>
+			<Cell><Data ss:Type="String">enum('Sin seleccionar','Mujer','Hombre','Otros')</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">Sin seleccionar</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Género del usuario</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">pais</Data></Cell>
+			<Cell><Data ss:Type="String">varchar(60)</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">País de residencia</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">nacionalidad</Data></Cell>
+			<Cell><Data ss:Type="String">varchar(100)</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Nacionalidad del usuario</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">correo</Data></Cell>
+			<Cell><Data ss:Type="String">varchar(250)</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Correo electrónico del usuario</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">contraseña</Data></Cell>
+			<Cell><Data ss:Type="String">varchar(10)</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Contraseña de acceso</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">rol</Data></Cell>
+			<Cell><Data ss:Type="String">enum('Ninguno','Administrador','Operador')</Data></Cell>
+			<Cell><Data ss:Type="String">utf8mb4_0900_ai_ci</Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">Ninguno</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Rol del usuario en el sistema</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">fecha_registro</Data></Cell>
+			<Cell><Data ss:Type="String">datetime</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">CURRENT_TIMESTAMP</Data></Cell>
+			<Cell><Data ss:Type="String">DEFAULT_GENERATED</Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Fecha de registro en el sistema</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">activo</Data></Cell>
+			<Cell><Data ss:Type="String">int</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">YES</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">1</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">select,insert,update,references</Data></Cell>
+			<Cell><Data ss:Type="String">Estado del usuario (1=activo, 0=inactivo)</Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>

@@ -94,16 +94,18 @@ if ($role === 'Administrador') {
                 }
 
 
-                // Prepara el bloque multimedia según el tipo
                 if ($mime !== '' && strpos($mime, 'image') !== false) {
                     $multimediaHtml = "<img class='img-fluid multimedia_MP' src='$src' />";
                 } elseif ($mime !== '' && strpos($mime, 'video') !== false) {
-                    $multimediaHtml = "<video class='multimedia_MP w-50 mx-auto d-block 'controls>
-                              <source src='$src' type='$mime'>
-                           </video>";
+                  $multimediaHtml = "<video class='multimedia_MP w-100 mx-auto d-block' controls>
+                       <source src='$src' type='$mime'>
+                       Tu navegador no soporta video.
+                   </video>";
+
                 } else {
-                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='/assets/image/pele.jpg' />";
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP  ' src='/assets/image/pele.jpg' />";
                 }
+
 
                 echo '
                   <div class="col-6 col-md-3 mundial_card">

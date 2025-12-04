@@ -118,6 +118,54 @@
         ?>
 
 
+        <?php 
+
+         
+        $config = require 'core/config.php';
+        $db = new Database($config);
+        $id = $_GET['idMundial'] ?? null;
+         // Llamada a tu procedimiento almacenado
+        $stmt = $db->query("CALL FiltrarPublicacionesPorMundial($id)");
+        
+            // Obtener resultados como array asociativo
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+          foreach ($rows as $row) {
+                
+                $mime = $row['mime_type'] ?? '';
+                $src = '';
+
+                if (!empty($row['multimedia'])) {
+                    $data = base64_encode($row['multimedia']);
+                    $src = "data:$mime;base64,$data";
+                }
+
+
+                if ($mime !== '' && strpos($mime, 'image') !== false) {
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP' src='$src' />";
+                } elseif ($mime !== '' && strpos($mime, 'video') !== false) {
+                  $multimediaHtml = "<video class='multimedia_MP w-100 mx-auto d-block' controls>
+                       <source src='$src' type='$mime'>
+                       Tu navegador no soporta video.
+                   </video>";
+
+                } else {
+                    $multimediaHtml = "<img class='img-fluid multimedia_MP  ' src='/assets/image/pele.jpg' />";
+                }
+
+
+                echo '
+                  <div class="col-6 col-md-3 mundial_card">
+
+                  <a href="/publicacion?idPublicacion=' . $row['idPublicacion'] . '">
+                           <div class="card-image-mp">' . $multimediaHtml . '</div>
+                  </a>
+                    
+                  </div>
+                ';
+            }
+         ?>
+
 
 
         <div class="row gx-1 gy-1 mt-4 contenedor_publicaciones" style="margin: 2px;">
